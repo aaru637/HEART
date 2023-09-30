@@ -12,12 +12,19 @@ class QuoteWidget extends StatefulWidget {
 class _QuoteWidgetState extends State<QuoteWidget> {
   TextEditingController quote = TextEditingController();
   DateTime dateTime = DateTime.now();
+  bool isLoading = false;
 
   Future<void> setQuote(DateTime dateTime) async {
     String result = await QuoteAPI.getQuote(dateTime);
     setState(() {
       quote.text = result;
     });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    quote.dispose();
   }
 
   @override
@@ -30,7 +37,9 @@ class _QuoteWidgetState extends State<QuoteWidget> {
         future: QuoteAPI.getQuote(dateTime),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Container();
+            return const CircularProgressIndicator(
+              color: Colors.blue,
+            );
           }
           return Text(
             "\"${snapshot.data!}\"",

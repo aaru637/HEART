@@ -23,8 +23,17 @@ class QuoteAPI {
     bool status = await checkData(time);
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     if (!status) {
+      if (sharedPreferences.getString("quote").toString() == "null") {
+        sharedPreferences.remove("quote");
+        return apiCall(sharedPreferences);
+      }
       return sharedPreferences.getString("quote").toString();
+    } else {
+      return apiCall(sharedPreferences);
     }
+  }
+
+  static Future<String> apiCall(SharedPreferences sharedPreferences) async {
     const url = "https://api.api-ninjas.com/v1/quotes?category=friendship";
     var response = await http.get(Uri.parse(url),
         headers: {"X-Api-Key": "ddn9goC4NwhW/Vyfl+mPsg==VN2xjddQd4dDEFNa"});

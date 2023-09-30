@@ -15,9 +15,9 @@ class _HeadWidgetState extends State<HeadWidget> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          "Dgon",
+          "Heart",
           style: TextStyle(
-              fontSize: width * 0.1,
+              fontSize: width * 0.08,
               fontFamily: "Lemon",
               fontWeight: FontWeight.bold),
         ),

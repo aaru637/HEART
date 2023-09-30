@@ -11,7 +11,6 @@ class LottieWidget extends StatefulWidget {
 class _LottieWidgetState extends State<LottieWidget> {
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
   }
 
@@ -20,7 +19,7 @@ class _LottieWidgetState extends State<LottieWidget> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Container(
-      padding: EdgeInsets.only(bottom: height * 0.1, right: width * 0.1),
+      padding: EdgeInsets.only(bottom: height * 0.06, right: width * 0.1),
       alignment: Alignment.bottomCenter,
       child: ClipRRect(
           borderRadius: BorderRadius.circular(40),

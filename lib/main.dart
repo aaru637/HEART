@@ -1,4 +1,5 @@
-import 'package:demo/Screens/Main/MainScreen.dart';
+import 'package:demo/Screens/Login/Screen/Login.dart';
+import 'package:demo/Screens/Register/Screen/Register.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -14,9 +15,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainScreen(),
+      theme: ThemeData(primarySwatch: Colors.green),
+      home: const Login(),
     );
   }
 }
