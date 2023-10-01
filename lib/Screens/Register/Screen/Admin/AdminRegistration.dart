@@ -1,7 +1,12 @@
-import 'package:demo/ReUsableWidgets/PasswordField.dart';
-import 'package:demo/ReUsableWidgets/TextFormFieldWidget.dart';
+import 'package:demo/ReUsableWidgets/PasswordFieldWidget.dart';
+import 'package:demo/ReUsableWidgets/NameFieldWidget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:icons_flutter/icons_flutter.dart';
+
+import '../../../../ReUsableWidgets/EmailFieldWidget.dart';
+import '../../../Login/Screen/Login.dart';
+import '../../../Main/MainScreen.dart';
 
 class AdminRegistration extends StatefulWidget {
   const AdminRegistration({super.key});
@@ -16,9 +21,7 @@ class _AdminRegistrationState extends State<AdminRegistration> {
   TextEditingController email = TextEditingController();
   TextEditingController username = TextEditingController();
   TextEditingController password = TextEditingController();
-  bool isObscure = true;
   bool isLoading = false;
-  IconData passwordIcon = Feather.eye_off;
   IconData usernameIcon = Feather.thumbs_down;
 
   @override
@@ -42,16 +45,14 @@ class _AdminRegistrationState extends State<AdminRegistration> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.min,
           children: [
-            TextFormFieldWidget(
+            NameFieldWidget(
                 controller: name,
                 inputType: TextInputType.name,
                 labelText: "Full Name",
                 icon: Elusive.person),
-            TextFormFieldWidget(
-                controller: email,
-                inputType: TextInputType.emailAddress,
-                labelText: "Email",
-                icon: Elusive.mail),
+            EmailFieldWidget(
+              controller: email,
+            ),
             Container(
               margin: EdgeInsets.fromLTRB(
                   width * 0.03, width * 0.01, width * 0.03, width * 0.03),
@@ -59,7 +60,13 @@ class _AdminRegistrationState extends State<AdminRegistration> {
                 style: TextStyle(fontFamily: "Mooli", fontSize: width * 0.04),
                 controller: username,
                 onChanged: (value) {
-                  if (value.length <= 8) {
+                  if (value.startsWith(RegExp(r'[0-9]+'))) {
+                    setState(() {
+                      usernameIcon = Feather.thumbs_down;
+                    });
+                    const SnackBar(
+                        content: Text("Username doesn't start with a Number."));
+                  } else if (value.length <= 8) {
                     setState(() {
                       usernameIcon = Feather.thumbs_down;
                     });
@@ -98,12 +105,17 @@ class _AdminRegistrationState extends State<AdminRegistration> {
                 },
               ),
             ),
-            PasswordField(
+            PasswordFieldWidget(
               controller: password,
+              type: "Register",
             ),
             ElevatedButton(
               onPressed: () {
-                if (key.currentState!.validate()) {}
+                if (key.currentState!.validate()) {
+                  Get.off(() => const MainScreen(),
+                      transition: Transition.fadeIn,
+                      duration: const Duration(seconds: 1));
+                }
               },
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -135,7 +147,11 @@ class _AdminRegistrationState extends State<AdminRegistration> {
                       fontWeight: FontWeight.bold),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.off(() => const Login(),
+                        transition: Transition.fadeIn,
+                        duration: const Duration(seconds: 1));
+                  },
                   child: Text(
                     "Click Here",
                     style: TextStyle(

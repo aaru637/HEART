@@ -43,6 +43,7 @@ class _QuoteWidgetState extends State<QuoteWidget> {
           }
           return Text(
             "\"${snapshot.data!}\"",
+            textAlign: TextAlign.justify,
             style: TextStyle(
                 fontFamily: "Mooli",
                 letterSpacing: 1.05,

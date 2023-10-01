@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class TextFormFieldWidget extends StatelessWidget {
+class NameFieldWidget extends StatelessWidget {
   final TextEditingController controller;
   final TextInputType inputType;
   final String labelText;
   final IconData icon;
-  const TextFormFieldWidget(
+  const NameFieldWidget(
       {super.key,
       required this.controller,
       required this.inputType,
@@ -35,6 +35,11 @@ class TextFormFieldWidget extends StatelessWidget {
           if (value == null || value.isEmpty) {
             return "Please Enter Your $labelText";
           } else {
+            if (labelText == "Full Name") {
+              if (RegExp(r'[^a-zA-Z ]+').hasMatch(value)) {
+                return "Enter Valid Name";
+              }
+            }
             return null;
           }
         },

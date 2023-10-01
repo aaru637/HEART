@@ -1,8 +1,11 @@
+import 'package:demo/Screens/Register/Screen/Register.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:icons_flutter/icons_flutter.dart';
 
-import '../../../../ReUsableWidgets/PasswordField.dart';
-import '../../../../ReUsableWidgets/TextFormFieldWidget.dart';
+import '../../../../ReUsableWidgets/PasswordFieldWidget.dart';
+import '../../../../ReUsableWidgets/NameFieldWidget.dart';
+import '../../../Main/MainScreen.dart';
 
 class AdminLogin extends StatefulWidget {
   const AdminLogin({super.key});
@@ -63,12 +66,17 @@ class _AdminLoginState extends State<AdminLogin> {
                 },
               ),
             ),
-            PasswordField(
+            PasswordFieldWidget(
               controller: password,
+              type: "Login",
             ),
             ElevatedButton(
               onPressed: () {
-                if (key.currentState!.validate()) {}
+                if (key.currentState!.validate()) {
+                  Get.off(() => const MainScreen(),
+                      transition: Transition.fadeIn,
+                      duration: const Duration(seconds: 1));
+                }
               },
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -100,7 +108,11 @@ class _AdminLoginState extends State<AdminLogin> {
                       fontWeight: FontWeight.bold),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.off(() => const Register(),
+                        transition: Transition.fadeIn,
+                        duration: const Duration(seconds: 1));
+                  },
                   child: Text(
                     "Click Here",
                     style: TextStyle(

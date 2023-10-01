@@ -57,8 +57,8 @@ class _LoginContentState extends State<LoginContent>
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: [
-                    Color.fromRGBO(12, 0, 49, 1),
-                    Color.fromRGBO(87, 159, 222, 1)
+                    Color.fromRGBO(230, 9, 101, 1),
+                    Color.fromRGBO(255, 161, 201, 1),
                   ],
                 ),
                 color: const Color.fromARGB(255, 28, 66, 191),
