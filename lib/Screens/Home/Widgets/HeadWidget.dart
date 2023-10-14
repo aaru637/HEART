@@ -24,7 +24,7 @@ class _HeadWidgetState extends State<HeadWidget> {
         Container(
           padding: EdgeInsets.only(right: width * 0.08),
           child: const CircleAvatar(
-            backgroundImage: AssetImage("assets/images/DK.jpg"),
+            backgroundImage: AssetImage("assets/images/profile.png"),
             minRadius: 10,
             maxRadius: 25,
           ),

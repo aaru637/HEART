@@ -1,10 +1,12 @@
-import 'package:demo/Screens/Register/Screen/Register.dart';
+import 'package:heart/ReUsableWidgets/NameFieldWidget.dart';
+import 'package:heart/Screens/Login/API/LoginAdmin.dart';
+import 'package:heart/Screens/Register/Screen/Register.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:icons_flutter/icons_flutter.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../../ReUsableWidgets/PasswordFieldWidget.dart';
-import '../../../../ReUsableWidgets/NameFieldWidget.dart';
 import '../../../Main/MainScreen.dart';
 
 class AdminLogin extends StatefulWidget {
@@ -32,101 +34,102 @@ class _AdminLoginState extends State<AdminLogin> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
-      child: Form(
-        key: key,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              margin: EdgeInsets.fromLTRB(
-                  width * 0.03, width * 0.01, width * 0.03, width * 0.03),
-              child: TextFormField(
-                style: TextStyle(fontFamily: "Mooli", fontSize: width * 0.04),
-                controller: username,
-                keyboardType: TextInputType.name,
-                decoration: InputDecoration(
-                  label: const Text("Username"),
-                  labelStyle: TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: width * 0.04),
-                  suffixIcon: const Icon(
-                    Feather.anchor,
-                    color: Colors.green,
-                  ),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Please Enter Your Username";
-                  } else {
-                    return null;
-                  }
-                },
-              ),
-            ),
-            PasswordFieldWidget(
-              controller: password,
-              type: "Login",
-            ),
-            ElevatedButton(
-              onPressed: () {
-                if (key.currentState!.validate()) {
-                  Get.off(() => const MainScreen(),
-                      transition: Transition.fadeIn,
-                      duration: const Duration(seconds: 1));
-                }
-              },
-              child: Row(
+    return isLoading
+        ? SizedBox(
+            width: width,
+            height: MediaQuery.of(context).size.height,
+            child:
+                LottieBuilder.asset("assets/animations/Register_Loading.json"),
+          )
+        : GestureDetector(
+            onTap: () => FocusScope.of(context).unfocus(),
+            child: Form(
+              key: key,
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    "Login ",
-                    style: TextStyle(
-                        fontFamily: "Mooli",
-                        fontWeight: FontWeight.bold,
-                        fontSize: width * 0.04),
+                  NameFieldWidget(
+                      controller: username,
+                      inputType: TextInputType.name,
+                      labelText: "Username",
+                      icon: Feather.anchor),
+                  PasswordFieldWidget(
+                    controller: password,
+                    type: "Login",
                   ),
-                  Icon(
-                    Feather.arrow_right,
-                    size: width * 0.05,
+                  ElevatedButton(
+                    onPressed: () async {
+                      if (key.currentState!.validate()) {
+                        setState(() {
+                          isLoading = true;
+                        });
+                        if (await LoginAdmin.loginAdmin(
+                            username.text.trim(), password.text.trim())) {
+                          setState(() {
+                            isLoading = false;
+                          });
+                          Get.off(() => const MainScreen(),
+                              transition: Transition.fadeIn,
+                              duration: const Duration(seconds: 1));
+                        } else {
+                          setState(() {
+                            isLoading = false;
+                            print("error");
+                          });
+                        }
+                      }
+                    },
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "Login ",
+                          style: TextStyle(
+                              fontFamily: "Mooli",
+                              fontWeight: FontWeight.bold,
+                              fontSize: width * 0.04),
+                        ),
+                        Icon(
+                          Feather.arrow_right,
+                          size: width * 0.05,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        "New User ",
+                        style: TextStyle(
+                            fontFamily: "Mooli",
+                            fontSize: width * 0.04,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Get.off(() => const Register(),
+                              transition: Transition.fadeIn,
+                              duration: const Duration(seconds: 1));
+                        },
+                        child: Text(
+                          "Click Here",
+                          style: TextStyle(
+                              fontFamily: "Mooli",
+                              color: Colors.blueAccent,
+                              fontSize: width * 0.04,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  "New User ",
-                  style: TextStyle(
-                      fontFamily: "Mooli",
-                      fontSize: width * 0.04,
-                      fontWeight: FontWeight.bold),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Get.off(() => const Register(),
-                        transition: Transition.fadeIn,
-                        duration: const Duration(seconds: 1));
-                  },
-                  child: Text(
-                    "Click Here",
-                    style: TextStyle(
-                        fontFamily: "Mooli",
-                        color: Colors.blueAccent,
-                        fontSize: width * 0.04,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
+          );
   }
 }

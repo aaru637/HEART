@@ -2,7 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class DayWidget extends StatefulWidget {
-  const DayWidget({super.key});
+  final String nickName;
+  const DayWidget({super.key, required this.nickName});
 
   @override
   State<DayWidget> createState() => _DayWidgetState();
@@ -48,7 +49,7 @@ class _DayWidgetState extends State<DayWidget> {
         return Align(
           alignment: Alignment.topLeft,
           child: Text(
-            "Good ${snapshot.data!} DK 🙏,",
+            "Good ${snapshot.data!} ${widget.nickName} 🙏,",
             style: TextStyle(
                 fontSize: width * 0.05,
                 fontFamily: "Mooli",

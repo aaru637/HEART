@@ -1,5 +1,5 @@
-import 'package:demo/ReUsableWidgets/PasswordFieldWidget.dart';
-import 'package:demo/ReUsableWidgets/NameFieldWidget.dart';
+import 'package:heart/ReUsableWidgets/PasswordFieldWidget.dart';
+import 'package:heart/ReUsableWidgets/NameFieldWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:icons_flutter/icons_flutter.dart';
@@ -18,6 +18,7 @@ class StudentRegistration extends StatefulWidget {
 class _StudentRegistrationState extends State<StudentRegistration> {
   final key = GlobalKey<FormState>();
   TextEditingController name = TextEditingController();
+  TextEditingController nickName = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController username = TextEditingController();
   TextEditingController password = TextEditingController();
@@ -33,6 +34,18 @@ class _StudentRegistrationState extends State<StudentRegistration> {
     username.dispose();
     password.dispose();
     adminCode.dispose();
+  }
+
+  void thumbsUp() {
+    setState(() {
+      usernameIcon = Feather.thumbs_up;
+    });
+  }
+
+  void thumbsDown() {
+    setState(() {
+      usernameIcon = Feather.thumbs_down;
+    });
   }
 
   @override
@@ -52,6 +65,11 @@ class _StudentRegistrationState extends State<StudentRegistration> {
                 inputType: TextInputType.name,
                 labelText: "Full Name",
                 icon: Elusive.person),
+            NameFieldWidget(
+                controller: nickName,
+                inputType: TextInputType.name,
+                labelText: "Nickname",
+                icon: Icons.person),
             EmailFieldWidget(
               controller: email,
             ),
@@ -66,31 +84,23 @@ class _StudentRegistrationState extends State<StudentRegistration> {
               child: TextFormField(
                 style: TextStyle(fontFamily: "Mooli", fontSize: width * 0.04),
                 controller: username,
-                onChanged: (value) {
+                onChanged: (value) async {
+                  if (value.isEmpty) {
+                    thumbsDown();
+                    print("empty");
+                  }
                   if (value.startsWith(RegExp(r'[0-9]+'))) {
-                    setState(() {
-                      usernameIcon = Feather.thumbs_down;
-                    });
-                    const SnackBar(
-                        content: Text("Username doesn't start with a Number."));
+                    thumbsDown();
+                    print("Username doesn't start with a Number.");
                   } else if (value.length <= 8) {
-                    setState(() {
-                      usernameIcon = Feather.thumbs_down;
-                    });
-                    const SnackBar(
-                        content: Text(
-                            "Username Must be greater than the 8 Characters."));
+                    thumbsDown();
+                    print("Username Must be greater than the 8 Characters.");
                   } else if (value.length >= 16) {
-                    setState(() {
-                      usernameIcon = Feather.thumbs_down;
-                    });
-                    const SnackBar(
-                        content: Text(
-                            "Username Must be less than the 16 Characters."));
+                    thumbsDown();
+                    print("Username Must be less than the 16 Characters.");
                   } else {
-                    setState(() {
-                      usernameIcon = Feather.thumbs_up;
-                    });
+                    thumbsDown();
+                    print("Username already Exists");
                   }
                 },
                 keyboardType: TextInputType.name,
