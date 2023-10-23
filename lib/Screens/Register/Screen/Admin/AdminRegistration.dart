@@ -64,6 +64,7 @@ class _AdminRegistrationState extends State<AdminRegistration> {
         password: password.text.trim(),
         adminCode: await RegisterAdmin.getAdminCode(),
         group: <String>[],
+        requests: <String, bool>{},
         type: "ADMIN",
         isEmailVerified: false);
   }
@@ -75,8 +76,7 @@ class _AdminRegistrationState extends State<AdminRegistration> {
         ? SizedBox(
             width: width,
             height: MediaQuery.of(context).size.height,
-            child:
-                LottieBuilder.asset("assets/animations/Register_Loading.json"),
+            child: LottieBuilder.asset("assets/animations/Loading.json"),
           )
         : GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),

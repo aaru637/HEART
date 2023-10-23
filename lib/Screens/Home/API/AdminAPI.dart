@@ -6,7 +6,7 @@ class AdminAPI {
   static Future<Map<String, dynamic>> getAdminDetails(String id) async {
     try {
       var response =
-          await http.get(Uri.parse("${StaticVariables.BASE_URI}admin/$id"));
+          await http.get(Uri.parse("${StaticVariables.ADMIN_BASE_URI}$id"));
       return jsonDecode(response.body);
     } catch (e) {
       throw Error();

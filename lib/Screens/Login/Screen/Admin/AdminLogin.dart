@@ -38,8 +38,7 @@ class _AdminLoginState extends State<AdminLogin> {
         ? SizedBox(
             width: width,
             height: MediaQuery.of(context).size.height,
-            child:
-                LottieBuilder.asset("assets/animations/Register_Loading.json"),
+            child: LottieBuilder.asset("assets/animations/Loading.json"),
           )
         : GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
@@ -76,7 +75,6 @@ class _AdminLoginState extends State<AdminLogin> {
                         } else {
                           setState(() {
                             isLoading = false;
-                            print("error");
                           });
                         }
                       }

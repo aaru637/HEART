@@ -5,7 +5,6 @@ class AdminSharedPreferences {
   static Future<void> setAdminId(String id) async {
     sharedPreferences = await SharedPreferences.getInstance();
     sharedPreferences.setString("id", id);
-    print("Id Stored");
   }
 
   static Future<String> getAdminId() async {

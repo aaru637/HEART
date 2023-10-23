@@ -7,6 +7,7 @@ class Admin {
   final String password;
   final String adminCode;
   final List<String> group;
+  final Map<String, bool> requests;
   final String type;
   final bool isEmailVerified;
 
@@ -19,6 +20,7 @@ class Admin {
       required this.password,
       required this.adminCode,
       required this.group,
+      required this.requests,
       required this.type,
       required this.isEmailVerified});
 
@@ -31,6 +33,7 @@ class Admin {
         "password": password,
         "adminCode": adminCode,
         "group": group,
+        "requests": requests,
         "type": type,
         "isEmailVerified": isEmailVerified,
       };
@@ -44,6 +47,7 @@ class Admin {
         password: json["password"],
         adminCode: json["adminCode"],
         group: json["group"],
+        requests: json["requests"],
         type: json["type"],
         isEmailVerified: json["isEmailVerified"],
       );

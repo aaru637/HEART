@@ -5,6 +5,11 @@ import 'package:heart/SharedPreferences/AdminSharedPreferences.dart';
 class AdminProvider extends ChangeNotifier {
   String id_ = "";
   Map<String, dynamic> admin_ = {};
+  bool isLoading = false;
+
+  bool getIsLoading() {
+    return isLoading;
+  }
 
   String getId() {
     return id_;
@@ -12,6 +17,11 @@ class AdminProvider extends ChangeNotifier {
 
   Map<String, dynamic> getAdmin() {
     return admin_;
+  }
+
+  void setIsLoading() {
+    isLoading = true;
+    notifyListeners();
   }
 
   void setId() async {

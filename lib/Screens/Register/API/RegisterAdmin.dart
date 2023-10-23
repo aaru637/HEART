@@ -11,12 +11,11 @@ class RegisterAdmin {
   static Future<bool> registerAdmin(Admin admin) async {
     try {
       var response = await http.post(
-        Uri.parse("${StaticVariables.BASE_URI}admin"),
+        Uri.parse("${StaticVariables.ADMIN_BASE_URI}admin"),
         headers: <String, String>{
           "Content-Type": "application/json",
         },
         body: jsonEncode(admin),
-        encoding: Encoding.getByName("gzip, deflate, br"),
       );
       if (response.body == "Email Sent") {
         await AdminSharedPreferences.setAdminId(admin.id);

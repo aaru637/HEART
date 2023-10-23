@@ -35,8 +35,7 @@ class _MainScreenState extends State<MainScreen> {
               future: load(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return LottieBuilder.asset(
-                      "assets/animations/Register_Loading.json");
+                  return LottieBuilder.asset("assets/animations/Loading.json");
                 } else {
                   return const Home();
                 }
