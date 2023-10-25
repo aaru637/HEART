@@ -9,6 +9,8 @@ class AdminSharedPreferences {
 
   static Future<String> getAdminId() async {
     sharedPreferences = await SharedPreferences.getInstance();
+    print(sharedPreferences.containsKey("id"));
+    print(sharedPreferences.get("id").toString());
     if (sharedPreferences.containsKey("id")) {
       return sharedPreferences.getString("id").toString();
     }

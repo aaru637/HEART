@@ -8,22 +8,28 @@ import 'package:heart/Static/StaticVariables.dart';
 import 'package:http/http.dart' as http;
 
 class RegisterAdmin {
-  static Future<bool> registerAdmin(Admin admin) async {
+  static Future<String> registerAdmin(Admin admin) async {
     try {
       var response = await http.post(
-        Uri.parse("${StaticVariables.ADMIN_BASE_URI}admin"),
+        Uri.parse(StaticVariables.ADMIN_BASE_URI),
         headers: <String, String>{
           "Content-Type": "application/json",
         },
         body: jsonEncode(admin),
       );
-      if (response.body == "Email Sent") {
-        await AdminSharedPreferences.setAdminId(admin.id);
-        return true;
+      var result = jsonDecode(response.body);
+      print("admin result = $result");
+      if (result["code"] == "success") {
+        if (result["message"] == "email-sent") {
+          await AdminSharedPreferences.setAdminId(admin.id);
+          return result["message"];
+        } else {
+          return result["message"];
+        }
       }
-      return false;
+      return "inerror";
     } catch (e) {
-      return false;
+      return "error";
     }
   }
 
@@ -34,12 +40,12 @@ class RegisterAdmin {
         for (int i = 0; i < 10; i++) {
           adminCode += StaticVariables.ALPHABETS[Random.secure().nextInt(25)];
         }
-        if (!(await AdminCodeCheck.adminCodeCheck(adminCode))) {
+        if (!(await AdminCodeCheck.adminCodeCheck(adminCode) == "true")) {
           return adminCode;
         }
       }
     } catch (e) {
-      return "Error";
+      return "error";
     }
   }
 }

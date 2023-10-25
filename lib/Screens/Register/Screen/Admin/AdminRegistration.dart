@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:icons_flutter/icons_flutter.dart';
 import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../../ReUsableWidgets/EmailFieldWidget.dart';
@@ -124,7 +123,8 @@ class _AdminRegistrationState extends State<AdminRegistration> {
                           print(
                               "Username Must be less than the 16 Characters.");
                         } else if (!(await AdminUsernameCheck
-                            .adminUsernameCheck(value))) {
+                                .adminUsernameCheck(value) ==
+                            "true")) {
                           thumbsUp();
                           print("ok");
                         } else {
@@ -170,16 +170,20 @@ class _AdminRegistrationState extends State<AdminRegistration> {
                         if (!mounted) return;
                         if (usernameIcon == Feather.thumbs_up) {
                           Admin getValues = await adminData();
-                          bool result =
+                          String result =
                               await RegisterAdmin.registerAdmin(getValues);
-                          if (result) {
+                          print("result = $result");
+                          if (result == "email-sent") {
                             Get.off(() => const MainScreen(),
                                 transition: Transition.fadeIn,
                                 duration: const Duration(seconds: 1));
                           } else {
-                            print("error");
+                            print("inerror");
                           }
                         } else {
+                          setState(() {
+                            isLoading = false;
+                          });
                           print("username already exists");
                         }
                         setState(() {

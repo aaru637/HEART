@@ -14,10 +14,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  @override
-  void initState() {
-    super.initState();
-  }
+  bool isLoading = false;
 
   dynamic load() {
     return Provider.of<AdminProvider>(context, listen: false).setAdmin();
@@ -27,29 +24,33 @@ class _MainScreenState extends State<MainScreen> {
   int currentPage = 0;
   @override
   Widget build(BuildContext context) {
+    Provider.of<AdminProvider>(context).setId();
     return Scaffold(
-      body: PageView(
-        controller: pageController,
-        children: [
-          FutureBuilder(
-              future: load(),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return LottieBuilder.asset("assets/animations/Loading.json");
-                } else {
-                  return const Home();
-                }
-              }),
-          const Center(child: Text("Chat Page")),
-          const Center(child: Text("Notofications Page")),
-          const Center(child: Text("Settings Page"))
-        ],
-        onPageChanged: (index) {
-          setState(() {
-            currentPage = index;
-          });
-        },
-      ),
+      body: isLoading
+          ? LottieBuilder.asset("assets/animations/Loading.json")
+          : PageView(
+              controller: pageController,
+              children: [
+                FutureBuilder(
+                    future: load(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return LottieBuilder.asset(
+                            "assets/animations/Loading.json");
+                      } else {
+                        return const Home();
+                      }
+                    }),
+                const Center(child: Text("Chat Page")),
+                const Center(child: Text("Notofications Page")),
+                const Center(child: Text("Settings Page"))
+              ],
+              onPageChanged: (index) {
+                setState(() {
+                  currentPage = index;
+                });
+              },
+            ),
       bottomNavigationBar: BottomBar(
         backgroundColor: Colors.blue,
         curve: Curves.easeInOutQuad,

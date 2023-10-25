@@ -4,13 +4,21 @@ import 'package:heart/Static/StaticVariables.dart';
 import 'package:http/http.dart' as http;
 
 class AdminUsernameCheck {
-  static Future<bool> adminUsernameCheck(String id) async {
+  static Future<String> adminUsernameCheck(String id) async {
     try {
       var response = await http.get(Uri.parse(
-          "${StaticVariables.ADMIN_BASE_URI}admin-username-check/$id"));
-      return jsonDecode(response.body);
+          "${StaticVariables.ADMIN_BASE_URI}/admin-username-check/$id"));
+      var result = jsonDecode(response.body);
+      if (result['code'] == "success") {
+        if (result['data'] == "true") {
+          return "true";
+        }
+        return "false";
+      } else {
+        return "error";
+      }
     } catch (e) {
-      return false;
+      return "error";
     }
   }
 }

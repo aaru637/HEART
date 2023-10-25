@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:heart/ConcreteClass/Admin.dart';
 import 'package:heart/Screens/Home/API/AdminAPI.dart';
 import 'package:heart/SharedPreferences/AdminSharedPreferences.dart';
 
 class AdminProvider extends ChangeNotifier {
   String id_ = "";
-  Map<String, dynamic> admin_ = {};
+  Admin admin_ = Admin.fromJson(<String, dynamic>{});
   bool isLoading = false;
 
   bool getIsLoading() {
@@ -15,7 +16,7 @@ class AdminProvider extends ChangeNotifier {
     return id_;
   }
 
-  Map<String, dynamic> getAdmin() {
+  Admin getAdmin() {
     return admin_;
   }
 

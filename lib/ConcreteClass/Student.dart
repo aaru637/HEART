@@ -7,8 +7,8 @@ class Student {
   final String username;
   final String password;
   final String adminCode;
-  final String type;
   final bool adminAccept;
+  final String type;
   final bool isEmailVerified;
 
   const Student(
@@ -19,8 +19,8 @@ class Student {
       required this.username,
       required this.password,
       required this.adminCode,
-      required this.type,
       required this.adminAccept,
+      required this.type,
       required this.isEmailVerified});
 
   Map<String, dynamic> toJson() => {
@@ -31,8 +31,8 @@ class Student {
         "username": username,
         "password": password,
         "adminCode": adminCode,
-        "type": type,
         "adminAccept": adminAccept,
+        "type": type,
         "isEmailVerified": isEmailVerified,
       };
 
@@ -44,7 +44,7 @@ class Student {
       username: json["username"],
       password: json["password"],
       adminCode: json["adminCode"],
-      type: json["type"],
       adminAccept: json["adminAccept"],
+      type: json["type"],
       isEmailVerified: json["isEmailVerified"]);
 }

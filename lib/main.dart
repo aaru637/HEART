@@ -43,8 +43,8 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   void check() async {
     String id = await AdminSharedPreferences.getAdminId();
+    print(id);
     if (id != "null") {
-      store();
       Get.off(() => const MainScreen());
     } else {
       Get.off(() => const Login());
@@ -58,12 +58,10 @@ class _SplashState extends State<Splash> {
     check();
   }
 
-  store() {
-    Provider.of<AdminProvider>(context, listen: false).setId();
-  }
-
   @override
   Widget build(BuildContext context) {
-    return LottieBuilder.asset("assets/animations/Register_Loading.json");
+    return Container(
+        color: Colors.white,
+        child: LottieBuilder.asset("assets/animations/Loading.json"));
   }
 }

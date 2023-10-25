@@ -20,7 +20,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   late Admin admin;
 
-  Future<Map<String, dynamic>> getData() async {
+  Future<Admin> getData() async {
     return Provider.of<AdminProvider>(context, listen: false).getAdmin();
   }
 
@@ -32,7 +32,7 @@ class _HomeState extends State<Home> {
       body: SingleChildScrollView(
         child: FutureBuilder(
           future: getData(),
-          builder: (context, AsyncSnapshot<Map<String, dynamic>> snapshot) {
+          builder: (context, AsyncSnapshot<Admin> snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(
                 child: LottieBuilder.asset(
@@ -65,7 +65,7 @@ class _HomeState extends State<Home> {
                       Column(
                         children: [
                           DayWidget(
-                            nickName: snapshot.data!["nickName"] ?? "",
+                            nickName: snapshot.data!.nickName ?? "",
                           ),
                           SizedBox(
                             height: height * 0.07,
