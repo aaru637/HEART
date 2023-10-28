@@ -1,37 +1,40 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
+
 import 'package:heart/ConcreteClass/Admin.dart';
 import 'package:heart/Screens/Home/API/AdminAPI.dart';
-import 'package:heart/SharedPreferences/AdminSharedPreferences.dart';
+import 'package:heart/SharedPreferences/UserSharedPreferences.dart';
 
-class AdminProvider extends ChangeNotifier {
-  String id_ = "";
-  Admin admin_ = Admin.fromJson(<String, dynamic>{});
-  bool isLoading = false;
+class AdminProvider {
+  String? id_;
+  String? type_;
+  Admin? admin_;
 
-  bool getIsLoading() {
-    return isLoading;
+  Stream<Admin?> get getAdmin {
+    return Stream.fromFuture(setAdmin());
   }
 
-  String getId() {
-    return id_;
+  String get id {
+    return id_!;
   }
 
-  Admin getAdmin() {
-    return admin_;
+  String get type {
+    return type_!;
   }
 
-  void setIsLoading() {
-    isLoading = true;
-    notifyListeners();
+  Future<String?> setId() async {
+    List<String> result = [];
+    result = await UserSharedPreferences.getId();
+    if (result[0] != "null") {
+      id_ = result[0];
+      type_ = result[1];
+      return id_!;
+    } else {
+      return "null";
+    }
   }
 
-  void setId() async {
-    id_ = await AdminSharedPreferences.getAdminId();
-    notifyListeners();
-  }
-
-  void setAdmin() async {
-    admin_ = await AdminAPI.getAdminDetails(id_);
-    notifyListeners();
+  Future<Admin?> setAdmin() async {
+    admin_ = await AdminAPI.getAdminDetails(id_!);
+    return admin_!;
   }
 }

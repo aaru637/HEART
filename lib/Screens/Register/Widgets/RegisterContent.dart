@@ -1,8 +1,6 @@
 import 'package:heart/Screens/Register/Screen/Admin/AdminRegistration.dart';
 import 'package:heart/Screens/Register/Screen/Student/StudentRegistration.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
 
 class RegisterContent extends StatefulWidget {
   const RegisterContent({super.key});

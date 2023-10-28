@@ -6,7 +6,7 @@ import 'package:icons_flutter/icons_flutter.dart';
 
 import '../../../../ReUsableWidgets/EmailFieldWidget.dart';
 import '../../../Login/Screen/Login.dart';
-import '../../../Main/MainScreen.dart';
+import '../../../Main/AdminOpeningScreen.dart';
 
 class StudentRegistration extends StatefulWidget {
   const StudentRegistration({super.key});
@@ -129,7 +129,7 @@ class _StudentRegistrationState extends State<StudentRegistration> {
             ElevatedButton(
               onPressed: () {
                 if (key.currentState!.validate()) {
-                  Get.off(() => const MainScreen(),
+                  Get.off(() => const AdminOpeningScreen(),
                       transition: Transition.fadeIn,
                       duration: const Duration(seconds: 1));
                 }

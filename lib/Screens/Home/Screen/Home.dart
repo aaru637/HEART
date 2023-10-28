@@ -20,40 +20,36 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   late Admin admin;
 
-  Future<Admin> getData() async {
-    return Provider.of<AdminProvider>(context, listen: false).getAdmin();
-  }
-
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
+    final user = Provider.of<AdminProvider>(context);
     return Scaffold(
-      body: SingleChildScrollView(
-        child: FutureBuilder(
-          future: getData(),
-          builder: (context, AsyncSnapshot<Admin> snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(
-                child: LottieBuilder.asset(
-                    "assets/animations/Register_Loading.json"),
-              );
-            } else {
-              return Container(
-                height: MediaQuery.of(context).size.height,
-                padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.07),
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.topRight,
-                      colors: [
-                        Color.fromRGBO(255, 251, 125, 100),
-                        Color.fromRGBO(133, 255, 189, 100),
-                        Color.fromRGBO(133, 255, 189, 100),
-                        Color.fromRGBO(255, 251, 125, 100),
-                      ]),
-                ),
+      body: StreamBuilder(
+        stream: user.getAdmin,
+        builder: (context, AsyncSnapshot<dynamic> snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(
+              child: LottieBuilder.asset("assets/animations/Loading.json"),
+            );
+          } else {
+            return Container(
+              height: MediaQuery.of(context).size.height,
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.07),
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.bottomLeft,
+                    end: Alignment.topRight,
+                    colors: [
+                      Color.fromRGBO(255, 251, 125, 100),
+                      Color.fromRGBO(133, 255, 189, 100),
+                      Color.fromRGBO(133, 255, 189, 100),
+                      Color.fromRGBO(255, 251, 125, 100),
+                    ]),
+              ),
+              child: SingleChildScrollView(
                 child: Padding(
                   padding: EdgeInsets.only(left: width * 0.08),
                   child: Column(
@@ -83,15 +79,17 @@ class _HomeState extends State<Home> {
                           SizedBox(
                             height: height * 0.04,
                           ),
+                          ElevatedButton(
+                              onPressed: () {}, child: const Text("Click"))
                         ],
                       ),
                     ],
                   ),
                 ),
-              );
-            }
-          },
-        ),
+              ),
+            );
+          }
+        },
       ),
     );
   }

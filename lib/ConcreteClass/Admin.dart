@@ -1,15 +1,15 @@
 class Admin {
-  final String id;
-  final String name;
-  final String nickName;
-  final String email;
-  final String username;
-  final String password;
-  final String adminCode;
-  final List<String> group;
-  final Map<String, bool> requests;
-  final String type;
-  final bool isEmailVerified;
+  final String? id;
+  final String? name;
+  final String? nickName;
+  final String? email;
+  final String? username;
+  final String? password;
+  final String? adminCode;
+  final List<dynamic>? group;
+  final Map<String, dynamic>? requests;
+  final String? type;
+  final bool? isEmailVerified;
 
   const Admin(
       {required this.id,
@@ -35,20 +35,22 @@ class Admin {
         "group": group,
         "requests": requests,
         "type": type,
-        "isEmailVerified": isEmailVerified,
+        "emailVerified": isEmailVerified,
       };
 
-  factory Admin.fromJson(Map<String, dynamic> json) => Admin(
-        id: json["id"],
-        name: json["name"],
-        nickName: json["nickName"],
-        email: json["email"],
-        username: json["username"],
-        password: json["password"],
-        adminCode: json["adminCode"],
-        group: json["group"],
-        requests: json["requests"],
-        type: json["type"],
-        isEmailVerified: json["isEmailVerified"],
-      );
+  factory Admin.fromJson(Map<String, dynamic> json) {
+    return Admin(
+      id: json["id"],
+      name: json["name"],
+      nickName: json["nickName"],
+      email: json["email"],
+      username: json["username"],
+      password: json["password"],
+      adminCode: json["adminCode"],
+      group: json["group"] as List<dynamic>,
+      requests: json["requests"] as Map<String, dynamic>,
+      type: json["type"],
+      isEmailVerified: json["emailVerified"],
+    );
+  }
 }

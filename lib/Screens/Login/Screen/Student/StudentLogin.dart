@@ -1,4 +1,4 @@
-import 'package:heart/Screens/Main/MainScreen.dart';
+import 'package:heart/Screens/Main/AdminOpeningScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:icons_flutter/icons_flutter.dart';
@@ -71,7 +71,7 @@ class _StudentLoginState extends State<StudentLogin> {
             ElevatedButton(
               onPressed: () {
                 if (key.currentState!.validate()) {
-                  Get.off(() => const MainScreen(),
+                  Get.off(() => const AdminOpeningScreen(),
                       transition: Transition.fadeIn,
                       duration: const Duration(seconds: 1));
                 }

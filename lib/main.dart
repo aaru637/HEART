@@ -1,10 +1,9 @@
 import 'package:get/get.dart';
 import 'package:heart/Providers/AdminProvider.dart';
 import 'package:heart/Screens/Login/Screen/Login.dart';
-import 'package:heart/Screens/Main/MainScreen.dart';
+import 'package:heart/Screens/Main/AdminOpeningScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:heart/SharedPreferences/AdminSharedPreferences.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
@@ -22,7 +21,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => AdminProvider()),
+        Provider<AdminProvider>(
+          create: (_) => AdminProvider(),
+        ),
       ],
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
@@ -33,35 +34,25 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Splash extends StatefulWidget {
+class Splash extends StatelessWidget {
   const Splash({super.key});
 
   @override
-  State<Splash> createState() => _SplashState();
-}
-
-class _SplashState extends State<Splash> {
-  void check() async {
-    String id = await AdminSharedPreferences.getAdminId();
-    print(id);
-    if (id != "null") {
-      Get.off(() => const MainScreen());
-    } else {
-      Get.off(() => const Login());
-    }
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    check();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Container(
-        color: Colors.white,
-        child: LottieBuilder.asset("assets/animations/Loading.json"));
+    final user = Provider.of<AdminProvider>(context, listen: false);
+    return FutureBuilder(
+      future: user.setId(),
+      builder: (context, AsyncSnapshot<String?> snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Container(
+              color: Colors.white,
+              child: LottieBuilder.asset("assets/animations/Loading.json"));
+        } else {
+          return snapshot.data! != "null"
+              ? const AdminOpeningScreen()
+              : const Login();
+        }
+      },
+    );
   }
 }

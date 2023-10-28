@@ -3,7 +3,7 @@ import 'dart:math';
 
 import 'package:heart/ConcreteClass/Admin.dart';
 import 'package:heart/Screens/Register/API/AdminCodeCheck.dart';
-import 'package:heart/SharedPreferences/AdminSharedPreferences.dart';
+import 'package:heart/SharedPreferences/UserSharedPreferences.dart';
 import 'package:heart/Static/StaticVariables.dart';
 import 'package:http/http.dart' as http;
 
@@ -18,10 +18,9 @@ class RegisterAdmin {
         body: jsonEncode(admin),
       );
       var result = jsonDecode(response.body);
-      print("admin result = $result");
       if (result["code"] == "success") {
         if (result["message"] == "email-sent") {
-          await AdminSharedPreferences.setAdminId(admin.id);
+          await UserSharedPreferences.setId(admin.id!, "admin");
           return result["message"];
         } else {
           return result["message"];

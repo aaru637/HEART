@@ -1,13 +1,15 @@
+import 'package:heart/Providers/AdminProvider.dart';
 import 'package:heart/ReUsableWidgets/NameFieldWidget.dart';
 import 'package:heart/Screens/Login/API/LoginAdmin.dart';
+import 'package:heart/Screens/Main/AdminOpeningScreen.dart';
 import 'package:heart/Screens/Register/Screen/Register.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:icons_flutter/icons_flutter.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../ReUsableWidgets/PasswordFieldWidget.dart';
-import '../../../Main/MainScreen.dart';
 
 class AdminLogin extends StatefulWidget {
   const AdminLogin({super.key});
@@ -34,6 +36,7 @@ class _AdminLoginState extends State<AdminLogin> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    final user = Provider.of<AdminProvider>(context);
     return isLoading
         ? SizedBox(
             width: width,
@@ -64,18 +67,26 @@ class _AdminLoginState extends State<AdminLogin> {
                         setState(() {
                           isLoading = true;
                         });
-                        if (await LoginAdmin.loginAdmin(
-                            username.text.trim(), password.text.trim())) {
+                        String result = await LoginAdmin.loginAdmin(
+                            username.text.trim(), password.text.trim());
+                        if (result == "error") {
                           setState(() {
                             isLoading = false;
                           });
-                          Get.off(() => const MainScreen(),
-                              transition: Transition.fadeIn,
-                              duration: const Duration(seconds: 1));
+                          print("Error try again later.");
+                        } else if (result == "false") {
+                          setState(() {
+                            isLoading = false;
+                          });
+                          print("Uer not found");
                         } else {
                           setState(() {
                             isLoading = false;
                           });
+                          user.setId();
+                          Get.off(() => const AdminOpeningScreen(),
+                              transition: Transition.fadeIn,
+                              duration: const Duration(seconds: 1));
                         }
                       }
                     },

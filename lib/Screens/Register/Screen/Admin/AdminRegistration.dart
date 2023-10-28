@@ -1,4 +1,5 @@
 import 'package:heart/ConcreteClass/Admin.dart';
+import 'package:heart/Providers/AdminProvider.dart';
 import 'package:heart/ReUsableWidgets/PasswordFieldWidget.dart';
 import 'package:heart/ReUsableWidgets/NameFieldWidget.dart';
 import 'package:heart/Screens/Register/API/RegisterAdmin.dart';
@@ -6,11 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:icons_flutter/icons_flutter.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../../ReUsableWidgets/EmailFieldWidget.dart';
 import '../../../Login/Screen/Login.dart';
-import '../../../Main/MainScreen.dart';
+import '../../../Main/AdminOpeningScreen.dart';
 import '../../API/AdminUsernameCheck.dart';
 
 class AdminRegistration extends StatefulWidget {
@@ -71,6 +73,7 @@ class _AdminRegistrationState extends State<AdminRegistration> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    final user = Provider.of<AdminProvider>(context);
     return isLoading
         ? SizedBox(
             width: width,
@@ -172,9 +175,9 @@ class _AdminRegistrationState extends State<AdminRegistration> {
                           Admin getValues = await adminData();
                           String result =
                               await RegisterAdmin.registerAdmin(getValues);
-                          print("result = $result");
                           if (result == "email-sent") {
-                            Get.off(() => const MainScreen(),
+                            user.setId();
+                            Get.off(() => const AdminOpeningScreen(),
                                 transition: Transition.fadeIn,
                                 duration: const Duration(seconds: 1));
                           } else {

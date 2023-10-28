@@ -1,56 +1,35 @@
 import 'package:bottom_bar/bottom_bar.dart';
-import 'package:heart/Providers/AdminProvider.dart';
-import 'package:heart/Screens/Home/Screen/Home.dart';
 import 'package:flutter/material.dart';
+import 'package:heart/Screens/Home/Screen/Home.dart';
 import 'package:icons_flutter/icons_flutter.dart';
-import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+class AdminMainScreen extends StatefulWidget {
+  const AdminMainScreen({super.key});
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  State<AdminMainScreen> createState() => _AdminMainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
-  bool isLoading = false;
-
-  dynamic load() {
-    return Provider.of<AdminProvider>(context, listen: false).setAdmin();
-  }
-
+class _AdminMainScreenState extends State<AdminMainScreen> {
   final pageController = PageController();
   int currentPage = 0;
   @override
   Widget build(BuildContext context) {
-    Provider.of<AdminProvider>(context).setId();
     return Scaffold(
-      body: isLoading
-          ? LottieBuilder.asset("assets/animations/Loading.json")
-          : PageView(
-              controller: pageController,
-              children: [
-                FutureBuilder(
-                    future: load(),
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.waiting) {
-                        return LottieBuilder.asset(
-                            "assets/animations/Loading.json");
-                      } else {
-                        return const Home();
-                      }
-                    }),
-                const Center(child: Text("Chat Page")),
-                const Center(child: Text("Notofications Page")),
-                const Center(child: Text("Settings Page"))
-              ],
-              onPageChanged: (index) {
-                setState(() {
-                  currentPage = index;
-                });
-              },
-            ),
+      body: PageView(
+        controller: pageController,
+        children: const [
+          Home(),
+          Center(child: Text("Chat Page")),
+          Center(child: Text("Notofications Page")),
+          Center(child: Text("Settings Page"))
+        ],
+        onPageChanged: (index) {
+          setState(() {
+            currentPage = index;
+          });
+        },
+      ),
       bottomNavigationBar: BottomBar(
         backgroundColor: Colors.blue,
         curve: Curves.easeInOutQuad,
