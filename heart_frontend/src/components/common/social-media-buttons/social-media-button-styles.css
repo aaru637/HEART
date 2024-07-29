@@ -1,0 +1,21 @@
+.google-btn {
+  background-color: rgb(224, 47, 47);
+  padding: 0.35rem;
+  border-radius: 0.6rem;
+}
+
+.facebook-btn {
+  background-color: rgb(24, 119, 242);
+  padding: 0.35rem;
+  border-radius: 0.6rem;
+}
+
+.google-btn:hover {
+  background-color: rgb(243, 98, 98);
+  filter: drop-shadow(0px 0px 30px red);
+}
+
+.facebook-btn:hover {
+  background-color: rgb(102, 164, 247);
+  filter: drop-shadow(0px 0px 30px blue);
+}

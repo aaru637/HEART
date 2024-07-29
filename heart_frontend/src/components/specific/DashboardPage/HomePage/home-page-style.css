@@ -1,0 +1,18 @@
+.btn {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin: 7px;
+  align-items: center;
+  background-color: rgb(3, 3, 209);
+  border: none;
+  border-radius: 20px;
+}
+
+.btn:hover {
+  background-color: rgb(101, 101, 243);
+}
+
+.btn:active {
+  background-color: blue;
+}

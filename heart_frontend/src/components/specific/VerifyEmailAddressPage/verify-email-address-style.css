@@ -1,0 +1,41 @@
+.continue-btn {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 50%;
+  justify-content: center;
+  margin: 7px;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: rgb(3, 3, 209);
+  border: none;
+  border-radius: 20px;
+}
+
+.continue-btn:hover {
+  background-color: rgb(101, 101, 243);
+}
+
+.continue-btn:active {
+  background-color: blue;
+}
+.resend-btn {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 50%;
+  justify-content: center;
+  margin: 7px;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: rgb(199, 199, 226);
+  border: none;
+  border-radius: 20px;
+  color: black;
+}
+
+.resend-btn:hover {
+  background-color: rgb(157, 157, 177);
+}
+
+.resend-btn:active {
+  background-color: gray;
+}

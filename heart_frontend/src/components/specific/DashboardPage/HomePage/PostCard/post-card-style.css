@@ -1,0 +1,43 @@
+.like-animation {
+  animation-name: pulse;
+  animation-duration: 700ms;
+  animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  animation-fill-mode: forwards;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 50;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.pause-animation {
+  animation-name: bounce;
+  animation-duration: 600ms;
+  animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  animation-fill-mode: forwards;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 100;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
