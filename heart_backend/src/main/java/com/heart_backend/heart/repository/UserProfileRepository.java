@@ -9,6 +9,6 @@ import com.heart_backend.heart.entity.UserProfile;
  * UserProfileRepository
  */
 @Repository
-public interface UserProfileRepository extends JpaRepository<UserProfile, String> {
+public interface UserProfileRepository extends JpaRepository<UserProfile, Long> {
 
 }

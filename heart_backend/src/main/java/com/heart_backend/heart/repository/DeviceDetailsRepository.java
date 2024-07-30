@@ -9,6 +9,6 @@ import com.heart_backend.heart.entity.DeviceDetails;
  * DeviceDetailsRepository
  */
 @Repository
-public interface DeviceDetailsRepository extends JpaRepository<DeviceDetails, String> {
+public interface DeviceDetailsRepository extends JpaRepository<DeviceDetails, Long> {
 
 }

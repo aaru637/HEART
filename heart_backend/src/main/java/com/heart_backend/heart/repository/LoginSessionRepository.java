@@ -9,6 +9,6 @@ import com.heart_backend.heart.entity.LoginSession;
  * LoginSessionRepository
  */
 @Repository
-public interface LoginSessionRepository extends JpaRepository<LoginSession, String> {
+public interface LoginSessionRepository extends JpaRepository<LoginSession, Long> {
 
 }
