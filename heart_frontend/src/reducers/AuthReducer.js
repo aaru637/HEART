@@ -51,6 +51,7 @@ const authReducer = async (state = initialState, action) => {
           id: signUpResponse.id,
           accessToken: signUpResponse.accessToken,
           refreshToken: signUpResponse.refresToken,
+          SESSION_ID: loginResponse.SESSION_ID,
         };
       }
       return state;

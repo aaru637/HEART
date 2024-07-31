@@ -149,13 +149,10 @@ public class AuthService {
     private String ipAddressGetter(HttpServletRequest request) {
 
         String ipAddress = request.getRemoteAddr();
-        System.out.println(ipAddress);
-        System.out.println(request.getRemoteAddr());
         String forwardedIp = request.getHeader("X-Forwarded-For");
 
         if (forwardedIp != null && !forwardedIp.isEmpty()) {
             ipAddress = forwardedIp.split(",")[0];
-            System.out.println(ipAddress);
         }
         return ipAddress;
     }

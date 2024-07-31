@@ -1,17 +1,12 @@
 package com.heart_backend.heart.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.HashMapChangeSet;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
-import com.heart_backend.heart.common.AccessDeniedException;
 import com.heart_backend.heart.dto.RequestMetaData;
 import com.heart_backend.heart.repository.LoginSessionRepository;
 import com.heart_backend.heart.util.JwtUtil;
-import java.util.HashMap;
-import java.util.function.Supplier;
-
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

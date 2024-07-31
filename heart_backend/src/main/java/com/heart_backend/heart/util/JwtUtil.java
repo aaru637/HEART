@@ -54,8 +54,6 @@ public class JwtUtil {
          * to verify the jwt token
          */
         public Claims verify(String token, String secret) {
-                System.out.println("token validation : "
-                                + Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody());
                 return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
         }
 }
