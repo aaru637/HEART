@@ -21,7 +21,7 @@ public class SignUpRequestDTO {
     private String language;
     private String timeZone;
     private String browser;
-    private String CPU;
+    private String cpu;
     private String device;
     private String engine;
 }

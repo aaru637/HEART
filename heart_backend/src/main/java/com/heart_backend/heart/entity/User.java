@@ -3,6 +3,7 @@ package com.heart_backend.heart.entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -69,5 +70,6 @@ public class User {
     private UserProfile profile;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+    @JsonManagedReference
     private List<LoginSession> sessions;
 }

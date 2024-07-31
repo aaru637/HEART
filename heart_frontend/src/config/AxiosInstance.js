@@ -30,6 +30,7 @@ axiosInstance.interceptors.request.use(
     const token = localStorage.getItem("accessToken");
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
+      config.headers.set("SESSION_ID", localStorage.getItem("SESSION_ID"));
     }
     return config;
   },

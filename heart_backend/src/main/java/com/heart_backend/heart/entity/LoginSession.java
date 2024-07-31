@@ -16,6 +16,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 
 /**
@@ -39,6 +41,7 @@ public class LoginSession {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID")
+    @JsonBackReference
     private User user;
 
     @Column(name = "SESSION_START_TIME")

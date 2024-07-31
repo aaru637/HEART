@@ -18,7 +18,7 @@ import java.util.HashMap;
 @Component
 public class JwtUtil {
 
-        public Map<String, Object> generateJWTToken(String id, String secret) {
+        public Map<String, Object> generateJWTToken(String id, String secret, String username) {
                 Map<String, Object> result = new HashMap<>();
 
                 Date accessTokenExpiryTime = Date
@@ -29,24 +29,33 @@ public class JwtUtil {
                 /*
                  * Claims
                  */
-                Claims accessTokenClaims = Jwts.claims().setIssuer(id).setIssuedAt(new Date())
+                Claims accessTokenClaims = Jwts.claims().setIssuer(id).setIssuedAt(new Date()).setSubject(username)
                                 .setExpiration(accessTokenExpiryTime);
 
-                Claims refreshTokenClaims = Jwts.claims().setIssuer(id).setIssuedAt(new Date())
+                Claims refreshTokenClaims = Jwts.claims().setIssuer(id).setIssuedAt(new Date()).setSubject(username)
                                 .setExpiration(refreshTokenExpiryTime);
 
                 /*
                  * tokens
                  */
                 String accessToken = Jwts.builder().setClaims(accessTokenClaims)
-                                .signWith(SignatureAlgorithm.HS512, secret.getBytes()).compact();
+                                .signWith(SignatureAlgorithm.HS512, secret).compact();
                 String refreshToken = Jwts.builder().setClaims(refreshTokenClaims)
-                                .signWith(SignatureAlgorithm.HS384, id.getBytes()).compact();
+                                .signWith(SignatureAlgorithm.HS384, id).compact();
 
                 result.put("accessToken", accessToken);
                 result.put("refreshToken", refreshToken);
                 result.put("accessTokenExpiryTime", accessTokenExpiryTime);
                 result.put("refreshTokenExpiryTime", refreshTokenExpiryTime);
                 return result;
+        }
+
+        /*
+         * to verify the jwt token
+         */
+        public Claims verify(String token, String secret) {
+                System.out.println("token validation : "
+                                + Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody());
+                return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
         }
 }

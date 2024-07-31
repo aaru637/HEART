@@ -7,6 +7,7 @@ const initialState = {
   id: localStorage.getItem("id"),
   accessToken: localStorage.getItem("accessToken"),
   refreshToken: localStorage.getItem("refreshToken"),
+  SESSION_ID: localStorage.getItem("SESSION_TOKEN"),
 };
 const authReducer = async (state = initialState, action) => {
   switch (action.type) {
@@ -21,6 +22,7 @@ const authReducer = async (state = initialState, action) => {
           id: loginResponse.id,
           accessToken: loginResponse.accessToken,
           refreshToken: loginResponse.refresToken,
+          SESSION_ID: loginResponse.SESSION_ID,
         };
       }
       return state;

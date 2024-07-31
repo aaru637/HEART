@@ -62,7 +62,6 @@ public class AuthService {
         String secret = UUID.randomUUID().toString().replace("-", "");
 
         try {
-            Map<String, Object> result = jwtUtil.generateJWTToken(userId, secret);
 
             /*
              * UserProfile table
@@ -83,6 +82,12 @@ public class AuthService {
             user.setProfile(profile);
 
             /*
+             * to generate access and refresh tokens
+             */
+
+            Map<String, Object> result = jwtUtil.generateJWTToken(userId, secret, user.getUsername());
+
+            /*
              * DeviceDetails Table
              */
             DeviceDetails deviceDetails = new DeviceDetails();
@@ -90,7 +95,7 @@ public class AuthService {
             deviceDetails.setIpAddress(ipAddressGetter(request));
             deviceDetails.setUserAgent(signUpRequestDTO.getUserAgent());
             deviceDetails.setBrowser(signUpRequestDTO.getBrowser());
-            deviceDetails.setCpu(signUpRequestDTO.getCPU());
+            deviceDetails.setCpu(signUpRequestDTO.getCpu());
             deviceDetails.setDevice(signUpRequestDTO.getDevice());
             deviceDetails.setEngine(signUpRequestDTO.getEngine());
             deviceDetails.setLanguage(signUpRequestDTO.getLanguage());
@@ -126,8 +131,8 @@ public class AuthService {
              * response setter
              */
             apiResponse.setStatus(HttpStatus.OK.value());
-            apiResponse.setData(
-                    new AuthResponseDTO(user.getUserId(), session.getAccessToken(), session.getRefreshToken()));
+            apiResponse.setData(new AuthResponseDTO(user.getUserId(), session.getAccessToken(),
+                    session.getRefreshToken(), session.getSessionId()));
             apiResponse.setError("false");
         } catch (Exception e) {
             apiResponse.setError("true");
@@ -144,10 +149,13 @@ public class AuthService {
     private String ipAddressGetter(HttpServletRequest request) {
 
         String ipAddress = request.getRemoteAddr();
+        System.out.println(ipAddress);
+        System.out.println(request.getRemoteAddr());
         String forwardedIp = request.getHeader("X-Forwarded-For");
 
         if (forwardedIp != null && !forwardedIp.isEmpty()) {
             ipAddress = forwardedIp.split(",")[0];
+            System.out.println(ipAddress);
         }
         return ipAddress;
     }

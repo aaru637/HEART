@@ -1,19 +1,16 @@
 package com.heart_backend.heart.dto;
 
+import org.springframework.stereotype.Component;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * AuthResponseDTO
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthResponseDTO {
-
+@Component
+public class RequestMetaData {
     private String id;
-    private String accessToken;
-    private String refreshToken;
-    private String SESSION_ID;
+    private String username;
 }
