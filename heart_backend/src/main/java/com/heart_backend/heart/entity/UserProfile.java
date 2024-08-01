@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +20,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "USER_PROFILE")
+@Table(name = "USER_PROFILE", uniqueConstraints = @UniqueConstraint(columnNames = { "USER_PROFILE_ID" }))
 public class UserProfile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

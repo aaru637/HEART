@@ -11,6 +11,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,15 +28,15 @@ import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "LOGIN_SESSION")
-public class LoginSession {
+@Table(name = "SESSION", uniqueConstraints = @UniqueConstraint(columnNames = { "SESSION_ID" }))
+public class Session {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
 
-    @Column(name = "LOGIN_SESSION_ID")
+    @Column(name = "SESSION_ID")
     @NotBlank
     private String sessionId;
 
@@ -43,6 +44,10 @@ public class LoginSession {
     @JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID")
     @JsonBackReference
     private User user;
+
+    @NotBlank
+    @Column(name = "USERNAME")
+    private String username;
 
     @Column(name = "SESSION_START_TIME")
     private LocalDateTime sessionStartTime = LocalDateTime.now();

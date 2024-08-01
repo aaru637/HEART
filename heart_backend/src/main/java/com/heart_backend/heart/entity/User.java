@@ -40,13 +40,17 @@ public class User {
     @NotBlank
     private String userId;
 
-    @NotBlank
     @Column(name = "USERNAME")
+    @NotBlank
     private String username;
 
     @NotBlank
     @Column(name = "PASSWORD")
     private String password;
+
+    @NotBlank
+    @Column(name = "EMAIL")
+    private String email;
 
     @Column(name = "CREATED_AT")
     private LocalDateTime createdAt = LocalDateTime.now();
@@ -71,5 +75,5 @@ public class User {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     @JsonManagedReference
-    private List<LoginSession> sessions;
+    private List<Session> sessions;
 }

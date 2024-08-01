@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,7 +19,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "DEVICE_DETAILS")
+@Table(name = "DEVICE_DETAILS", uniqueConstraints = @UniqueConstraint(columnNames = { "DEVICE_DETAILS_ID" }))
 public class DeviceDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

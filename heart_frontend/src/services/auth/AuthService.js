@@ -5,7 +5,7 @@ const login = async (credentials) => {
     localStorage.setItem("accessToken", response.data.accessToken);
     localStorage.setItem("refreshToken", response.data.refreshToken);
     localStorage.setItem("id", response.data.id);
-    localStorage.setItem("SESSION_ID", response.data.SESSION_ID);
+    localStorage.setItem("SESSION_ID", response.data.sessionID);
     return response.data;
   } catch (error) {
     console.log("Unable to login ", error);
@@ -33,7 +33,7 @@ const signup = async (credentials) => {
     localStorage.setItem("accessToken", response.data.accessToken);
     localStorage.setItem("refreshToken", response.data.refreshToken);
     localStorage.setItem("id", response.data.id);
-    localStorage.setItem("SESSION_ID", response.data.SESSION_ID);
+    localStorage.setItem("SESSION_ID", response.data.sessionID);
     return response.data;
   } catch (error) {
     console.log("Unable to signup ", error);

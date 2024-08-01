@@ -15,5 +15,5 @@ public class AuthResponseDTO {
     private String id;
     private String accessToken;
     private String refreshToken;
-    private String SESSION_ID;
+    private String sessionID;
 }
