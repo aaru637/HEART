@@ -13,6 +13,9 @@ public class AuthConstants {
     public static final String USERNAME_NOT_AVAILABLE = "username-not-available";
     public static final String USER_NOT_AVAILABLE = "user-not-available";
     public static final String ERROR_STRING = "Error Occured. Please Try again Later.";
+    public static final String LOGOUT_SUCCESS = "logged-out";
+    public static final String ALREADY_LOGOUT = "already-logged-out";
+    public static final String LOGOUT_FAILURE = "session-id-not-available";
     public static final String STATUS = "status";
     public static final String SUCCESS = "true";
     public static final String FAILURE = "false";

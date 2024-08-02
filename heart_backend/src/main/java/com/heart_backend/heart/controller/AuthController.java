@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.heart_backend.heart.common.APIResponse;
 import com.heart_backend.heart.dto.LoginRequestDTO;
+import com.heart_backend.heart.dto.LogoutRequestDTO;
 import com.heart_backend.heart.dto.SignUpRequestDTO;
 import com.heart_backend.heart.service.AuthService;
 import java.util.Map;
@@ -33,6 +34,12 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<APIResponse> login(@RequestBody LoginRequestDTO loginRequestDTO, HttpServletRequest request) {
         APIResponse apiResponse = authService.login(loginRequestDTO, request);
+        return ResponseEntity.status(apiResponse.getStatus()).body(apiResponse);
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<APIResponse> logout(@RequestBody LogoutRequestDTO logoutRequestDTO) {
+        APIResponse apiResponse = authService.logout(logoutRequestDTO);
         return ResponseEntity.status(apiResponse.getStatus()).body(apiResponse);
     }
 

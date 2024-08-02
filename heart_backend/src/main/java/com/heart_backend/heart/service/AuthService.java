@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.heart_backend.heart.common.APIResponse;
 import com.heart_backend.heart.dto.LoginRequestDTO;
+import com.heart_backend.heart.dto.LogoutRequestDTO;
 import com.heart_backend.heart.dto.SignUpRequestDTO;
 import com.heart_backend.heart.processor.AuthProcessor;
 import jakarta.servlet.http.HttpServletRequest;
@@ -47,6 +48,18 @@ public class AuthService {
          * To perform Login
          */
         apiResponse = authProcessor.loginProcessor(loginRequestDTO);
+        return apiResponse;
+    }
+
+    /*
+     * to handle the logout
+     */
+    public APIResponse logout(LogoutRequestDTO logoutRequestDTO) {
+        APIResponse apiResponse = new APIResponse();
+        /*
+         * to perform logout
+         */
+        apiResponse = authProcessor.logoutProcessor(logoutRequestDTO);
         return apiResponse;
     }
 

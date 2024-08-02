@@ -9,12 +9,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import java.time.LocalDateTime;
 import com.heart_backend.heart.common.APIResponse;
 import com.heart_backend.heart.constants.AuthConstants;
 import com.heart_backend.heart.dto.AdditionalDetails;
 import com.heart_backend.heart.dto.AuthResponseDTO;
 import com.heart_backend.heart.dto.LoginRequestDTO;
+import com.heart_backend.heart.dto.LogoutRequestDTO;
 import com.heart_backend.heart.dto.SignUpRequestDTO;
 import com.heart_backend.heart.entity.DeviceDetails;
 import com.heart_backend.heart.entity.Session;
@@ -170,6 +171,43 @@ public class AuthProcessor {
             LOG.error("Error Occured While Login : ", e.toString());
         }
         LOG.info("EXITED FROM LOGIN PROCESSOR.");
+        return apiResponse;
+    }
+
+    /*
+     * To perform logout
+     */
+    @Transactional
+    public APIResponse logoutProcessor(LogoutRequestDTO logoutRequestDTO) {
+        LOG.info("ENTERED TO LOGOUT PROCESSOR.");
+        APIResponse apiResponse = new APIResponse();
+        try {
+            Session session = sessionRepository.findBySessionId(logoutRequestDTO.getSessionId());
+            if (null != session) {
+                if (session.getIsLoggedIn()) {
+                    session.setSessionEndTime(LocalDateTime.now());
+                    session.setIsLoggedIn(false);
+                    sessionRepository.save(session);
+                    apiResponse.setStatus(AuthConstants.RESPONSE_OK);
+                    apiResponse.setData(AuthConstants.LOGOUT_SUCCESS);
+                    apiResponse.setError(AuthConstants.FAILURE);
+                } else {
+                    apiResponse.setStatus(AuthConstants.RESPONSE_OK);
+                    apiResponse.setData(AuthConstants.ALREADY_LOGOUT);
+                    apiResponse.setError(AuthConstants.FAILURE);
+                }
+            } else {
+                apiResponse.setStatus(AuthConstants.RESPONSE_OK);
+                apiResponse.setData(AuthConstants.LOGOUT_FAILURE);
+                apiResponse.setError(AuthConstants.FAILURE);
+            }
+        } catch (Exception e) {
+            LOG.error("Error Occured While Logging out : ", e.toString());
+            apiResponse.setStatus(AuthConstants.SERVER_ERROR);
+            apiResponse.setData(AuthConstants.ERROR_STRING);
+            apiResponse.setError(AuthConstants.FAILURE);
+        }
+        LOG.info("EXITED FROM LOGOUT PROCESSOR.");
         return apiResponse;
     }
 
