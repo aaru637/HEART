@@ -64,6 +64,11 @@ public class AuthProcessor {
             String secret = ids.get("secret");
 
             /*
+             * To save the UserProfile Details
+             */
+            UserProfile userProfile = saveUserProfile(userId, signUpRequestDTO.getFullName());
+
+            /*
              * To save the User Details
              */
             User user = new User();
@@ -71,12 +76,11 @@ public class AuthProcessor {
             user.setPassword(signUpRequestDTO.getPassword());
             user.setUsername(signUpRequestDTO.getUsername());
             user.setEmail(signUpRequestDTO.getEmail());
-            user = userRepository.save(user);
-
             /*
-             * To save the UserProfile Details
+             * To add the User Profile to the User
              */
-            UserProfile userProfile = saveUserProfile(userId, signUpRequestDTO.getFullName());
+            user.setProfile(userProfile);
+            user = userRepository.save(user);
 
             /*
              * To save the Device Details
@@ -89,22 +93,12 @@ public class AuthProcessor {
             Session session = saveLoginSession(deviceDetails, user, sessionId, secret);
 
             /*
-             * To add the session to the User
-             */
-            user.setSessions(session);
-            /*
-             * To add the User Profile to the User
-             */
-            user.setProfile(userProfile);
-
-            userRepository.save(user);
-
-            /*
              * Configuring API Response
              */
-            apiResponse.setStatus(AuthConstants.CREATED);
+            apiResponse.setStatus(AuthConstants.RESPONSE_OK);
             apiResponse.setData(new AuthResponseDTO(user.getUserId(), session.getAccessToken(),
                     session.getRefreshToken(), session.getSessionId()));
+            LOG.info(apiResponse.toString());
             apiResponse.setError(AuthConstants.FAILURE);
         } catch (Exception e) {
             apiResponse.setStatus(AuthConstants.SERVER_ERROR);
@@ -153,15 +147,9 @@ public class AuthProcessor {
                     Session session = saveLoginSession(deviceDetails, user, sessionId, secret);
 
                     /*
-                     * To store Session Details
-                     */
-                    user.setSessions(session);
-                    userRepository.save(user);
-
-                    /*
                      * Configuring API Response
                      */
-                    apiResponse.setStatus(AuthConstants.CREATED);
+                    apiResponse.setStatus(AuthConstants.RESPONSE_OK);
                     apiResponse.setData(new AuthResponseDTO(user.getUserId(), session.getAccessToken(),
                             session.getRefreshToken(), session.getSessionId()));
                     apiResponse.setError(AuthConstants.FAILURE);

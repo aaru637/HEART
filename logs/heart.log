@@ -845,3 +845,737 @@ org.hibernate.TransientPropertyValueException: object references an unsaved tran
 2024-08-02T09:33:50.298+05:30  INFO 36674 --- [heart_backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-08-02T09:33:50.303+05:30  INFO 36674 --- [heart_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-08-02T09:33:50.311+05:30  INFO 36674 --- [heart_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-02T14:39:19.887+05:30  INFO 67032 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Starting HeartBackendApplication using Java 17.0.11 with PID 67032 (/home/dhinesh/personal/workspace/heart/heart_backend/target/classes started by dhinesh in /home/dhinesh/personal/workspace/heart)
+2024-08-02T14:39:19.889+05:30  INFO 67032 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:39:19.932+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-runtime-2.3.1.jar referenced one or more files that do not exist: file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-api-2.3.1.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/txw2-2.3.1.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/istack-commons-runtime-3.0.7.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/stax-ex-1.8.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/FastInfoset-1.2.15.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/javax.activation-api-1.2.0.jar
+2024-08-02T14:39:19.933+05:30  INFO 67032 --- [heart_backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-02T14:39:19.933+05:30  INFO 67032 --- [heart_backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-02T14:39:20.903+05:30  INFO 67032 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:39:20.961+05:30  INFO 67032 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:39:21.782+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:39:21.791+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:39:21.791+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:39:21.830+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:39:21.831+05:30  INFO 67032 --- [heart_backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1898 ms
+2024-08-02T14:39:22.015+05:30 DEBUG 67032 --- [heart_backend] [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-08-02T14:39:22.141+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:39:22.190+05:30  INFO 67032 --- [heart_backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02T14:39:22.221+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:39:22.455+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:39:22.477+05:30  INFO 67032 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-02T14:39:22.621+05:30  INFO 67032 --- [heart_backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7423fd51
+2024-08-02T14:39:22.623+05:30  INFO 67032 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-02T14:39:22.657+05:30  WARN 67032 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:39:22.658+05:30  WARN 67032 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:39:23.434+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:39:23.543+05:30  INFO 67032 --- [heart_backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:39:24.004+05:30  WARN 67032 --- [heart_backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:39:24.148+05:30 DEBUG 67032 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:39:24.268+05:30 DEBUG 67032 --- [heart_backend] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:39:24.322+05:30 DEBUG 67032 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:39:24.363+05:30 DEBUG 67032 --- [heart_backend] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:39:24.411+05:30  WARN 67032 --- [heart_backend] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-08-02T14:39:24.829+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:39:24.839+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-08-02T14:39:24.912+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:39:24.926+05:30  INFO 67032 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Started HeartBackendApplication in 5.37 seconds (process running for 5.793)
+2024-08-02T14:39:25.882+05:30  INFO 67032 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02T14:39:25.882+05:30  INFO 67032 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-02T14:39:25.882+05:30 DEBUG 67032 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-08-02T14:39:25.882+05:30 DEBUG 67032 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-08-02T14:39:25.882+05:30 DEBUG 67032 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-08-02T14:39:25.883+05:30 DEBUG 67032 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@f87d248
+2024-08-02T14:39:25.884+05:30 DEBUG 67032 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4de5c2b0
+2024-08-02T14:39:25.884+05:30 DEBUG 67032 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-08-02T14:39:25.884+05:30  INFO 67032 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-08-02T14:39:31.308+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/signup", parameters={}
+2024-08-02T14:39:31.312+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.heart_backend.heart.controller.AuthController#signup(SignUpRequestDTO, HttpServletRequest)
+2024-08-02T14:39:31.312+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.config.JwtInterceptor          : ENTERED TO PRE HANDLE METHOD.
+2024-08-02T14:39:31.312+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.config.JwtInterceptor          : EXITED FROM PRE HANDLE METHOD.
+2024-08-02T14:39:31.355+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AdditionalDetails(ipAddress=null, userAgent=Mozilla Firefox, platform=Linux, language=en_US, timeZon (truncated)...]
+2024-08-02T14:39:31.365+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : ENTERED TO SIGNUP PROCESSOR.
+2024-08-02T14:39:31.366+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING USER PROFILE.
+2024-08-02T14:39:31.366+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING USER PROFILE.
+2024-08-02T14:39:31.422+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING DEVICE DETAILS.
+2024-08-02T14:39:31.422+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING DEVICE DETAILS.
+2024-08-02T14:39:31.425+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING SESSION.
+2024-08-02T14:39:31.425+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-2] com.heart_backend.heart.util.JwtUtil     : ENTERED TO GENERATE JWT TOKEN METHOD.
+2024-08-02T14:39:31.447+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-2] com.heart_backend.heart.util.JwtUtil     : EXITED FROM GENERATE JWT TOKEN METHOD.
+2024-08-02T14:39:31.448+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING SESSION.
+2024-08-02T14:39:31.452+05:30 ERROR 67032 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : Error Occured While Signup : 
+2024-08-02T14:39:31.452+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : EXITED FROM SIGNUP PROCESSOR.
+2024-08-02T14:39:31.466+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-08-02T14:39:31.467+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [APIResponse(status=500, data=Error Occured. Please Try again Later., error=true)]
+2024-08-02T14:39:31.473+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-08-02T14:39:45.665+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/username", parameters={}
+2024-08-02T14:39:45.666+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.heart_backend.heart.controller.AuthController#usernameChecker(Map)
+2024-08-02T14:39:45.666+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-3] c.h.heart.config.JwtInterceptor          : ENTERED TO PRE HANDLE METHOD.
+2024-08-02T14:39:45.666+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-3] c.h.heart.config.JwtInterceptor          : EXITED FROM PRE HANDLE METHOD.
+2024-08-02T14:39:45.667+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [{username=ishu123}]
+2024-08-02T14:39:45.667+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-3] c.h.heart.processor.AuthProcessor        : ENTERED TO USERNAME CHECKER.
+2024-08-02T14:39:45.766+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-3] c.h.heart.processor.AuthProcessor        : EXITED FROM USERNAME CHECKER.
+2024-08-02T14:39:45.766+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-08-02T14:39:45.766+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [APIResponse(status=200, data=username-available, error=false)]
+2024-08-02T14:39:45.768+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T14:39:52.218+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2024-08-02T14:39:52.218+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.heart_backend.heart.controller.AuthController#login(LoginRequestDTO, HttpServletRequest)
+2024-08-02T14:39:52.218+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-5] c.h.heart.config.JwtInterceptor          : ENTERED TO PRE HANDLE METHOD.
+2024-08-02T14:39:52.218+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-5] c.h.heart.config.JwtInterceptor          : EXITED FROM PRE HANDLE METHOD.
+2024-08-02T14:39:52.220+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AdditionalDetails(ipAddress=null, userAgent=Mozilla Firefox, platform=Linux, language=en_US, timeZon (truncated)...]
+2024-08-02T14:39:52.221+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-5] c.h.heart.processor.AuthProcessor        : ENTERED TO LOGIN PROCESSOR.
+2024-08-02T14:39:52.221+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-5] c.h.heart.processor.AuthProcessor        : ENTERED TO USERNAME CHECKER.
+2024-08-02T14:39:52.224+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-5] c.h.heart.processor.AuthProcessor        : EXITED FROM USERNAME CHECKER.
+2024-08-02T14:39:52.225+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-5] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING DEVICE DETAILS.
+2024-08-02T14:39:52.225+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-5] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING DEVICE DETAILS.
+2024-08-02T14:39:52.226+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-5] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING SESSION.
+2024-08-02T14:39:52.227+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-5] com.heart_backend.heart.util.JwtUtil     : ENTERED TO GENERATE JWT TOKEN METHOD.
+2024-08-02T14:39:52.227+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-5] com.heart_backend.heart.util.JwtUtil     : EXITED FROM GENERATE JWT TOKEN METHOD.
+2024-08-02T14:39:52.227+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-5] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING SESSION.
+2024-08-02T14:39:52.232+05:30  INFO 67032 --- [heart_backend] [http-nio-8080-exec-5] c.h.heart.processor.AuthProcessor        : EXITED FROM LOGIN PROCESSOR.
+2024-08-02T14:39:52.234+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-08-02T14:39:52.235+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [APIResponse(status=204, data=AuthResponseDTO(id=734ce336cfcd4d8fab422331968dadfe, accessToken=eyJhbG (truncated)...]
+2024-08-02T14:39:52.237+05:30 DEBUG 67032 --- [heart_backend] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2024-08-02T14:41:27.383+05:30  INFO 67032 --- [heart_backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2024-08-02T14:41:27.391+05:30  INFO 67032 --- [heart_backend] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:41:27.395+05:30  INFO 67032 --- [heart_backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-02T14:41:27.403+05:30  INFO 67032 --- [heart_backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-02T14:41:27.478+05:30  INFO 67032 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Starting HeartBackendApplication using Java 17.0.11 with PID 67032 (/home/dhinesh/personal/workspace/heart/heart_backend/target/classes started by dhinesh in /home/dhinesh/personal/workspace/heart)
+2024-08-02T14:41:27.478+05:30  INFO 67032 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:41:27.753+05:30  INFO 67032 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:41:27.776+05:30  INFO 67032 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:41:27.889+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:41:27.890+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:41:27.890+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:41:27.900+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:41:27.901+05:30  INFO 67032 --- [heart_backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 421 ms
+2024-08-02T14:41:27.984+05:30 DEBUG 67032 --- [heart_backend] [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-08-02T14:41:28.046+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:41:28.048+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:41:28.057+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:41:28.058+05:30  INFO 67032 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-08-02T14:41:28.062+05:30  INFO 67032 --- [heart_backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ca08298
+2024-08-02T14:41:28.062+05:30  INFO 67032 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-08-02T14:41:28.063+05:30  WARN 67032 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:41:28.063+05:30  WARN 67032 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:41:28.177+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:41:28.233+05:30  INFO 67032 --- [heart_backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:41:28.445+05:30  WARN 67032 --- [heart_backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:41:28.495+05:30 DEBUG 67032 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:41:28.576+05:30 DEBUG 67032 --- [heart_backend] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:41:28.599+05:30 DEBUG 67032 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:41:28.610+05:30 DEBUG 67032 --- [heart_backend] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:41:28.628+05:30  WARN 67032 --- [heart_backend] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-08-02T14:41:28.849+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:41:28.854+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-08-02T14:41:28.885+05:30  INFO 67032 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:41:28.894+05:30  INFO 67032 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Started HeartBackendApplication in 1.444 seconds (process running for 129.762)
+2024-08-02T14:41:28.898+05:30  INFO 67032 --- [heart_backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-02T14:41:45.737+05:30  INFO 67032 --- [heart_backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:41:45.745+05:30  INFO 67032 --- [heart_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-08-02T14:41:45.747+05:30  INFO 67032 --- [heart_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-08-02T14:41:47.043+05:30  INFO 70444 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Starting HeartBackendApplication using Java 17.0.11 with PID 70444 (/home/dhinesh/personal/workspace/heart/heart_backend/target/classes started by dhinesh in /home/dhinesh/personal/workspace/heart)
+2024-08-02T14:41:47.046+05:30  INFO 70444 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:41:47.094+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-runtime-2.3.1.jar referenced one or more files that do not exist: file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-api-2.3.1.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/txw2-2.3.1.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/istack-commons-runtime-3.0.7.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/stax-ex-1.8.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/FastInfoset-1.2.15.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/javax.activation-api-1.2.0.jar
+2024-08-02T14:41:47.094+05:30  INFO 70444 --- [heart_backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-02T14:41:47.095+05:30  INFO 70444 --- [heart_backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-02T14:41:48.047+05:30  INFO 70444 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:41:48.099+05:30  INFO 70444 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:41:48.817+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:41:48.826+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:41:48.827+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:41:48.873+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:41:48.874+05:30  INFO 70444 --- [heart_backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1778 ms
+2024-08-02T14:41:49.117+05:30 DEBUG 70444 --- [heart_backend] [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-08-02T14:41:49.250+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:41:49.287+05:30  INFO 70444 --- [heart_backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02T14:41:49.311+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:41:49.505+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:41:49.527+05:30  INFO 70444 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-02T14:41:49.682+05:30  INFO 70444 --- [heart_backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3276d94a
+2024-08-02T14:41:49.685+05:30  INFO 70444 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-02T14:41:49.726+05:30  WARN 70444 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:41:49.727+05:30  WARN 70444 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:41:50.508+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:41:50.602+05:30  INFO 70444 --- [heart_backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:41:51.042+05:30  WARN 70444 --- [heart_backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:41:51.193+05:30 DEBUG 70444 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:41:51.343+05:30 DEBUG 70444 --- [heart_backend] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:41:51.383+05:30 DEBUG 70444 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:41:51.417+05:30 DEBUG 70444 --- [heart_backend] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:41:51.449+05:30  WARN 70444 --- [heart_backend] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-08-02T14:41:51.831+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:41:51.840+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-08-02T14:41:51.916+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:41:51.929+05:30  INFO 70444 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Started HeartBackendApplication in 5.228 seconds (process running for 5.661)
+2024-08-02T14:41:53.005+05:30  INFO 70444 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02T14:41:53.005+05:30  INFO 70444 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-02T14:41:53.005+05:30 DEBUG 70444 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-08-02T14:41:53.005+05:30 DEBUG 70444 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-08-02T14:41:53.005+05:30 DEBUG 70444 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-08-02T14:41:53.007+05:30 DEBUG 70444 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3ad3913e
+2024-08-02T14:41:53.007+05:30 DEBUG 70444 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@198f219b
+2024-08-02T14:41:53.008+05:30 DEBUG 70444 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-08-02T14:41:53.008+05:30  INFO 70444 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-08-02T14:41:59.185+05:30 DEBUG 70444 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2024-08-02T14:41:59.189+05:30 DEBUG 70444 --- [heart_backend] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.heart_backend.heart.controller.AuthController#login(LoginRequestDTO, HttpServletRequest)
+2024-08-02T14:41:59.190+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.config.JwtInterceptor          : ENTERED TO PRE HANDLE METHOD.
+2024-08-02T14:41:59.190+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.config.JwtInterceptor          : EXITED FROM PRE HANDLE METHOD.
+2024-08-02T14:41:59.233+05:30 DEBUG 70444 --- [heart_backend] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AdditionalDetails(ipAddress=null, userAgent=Mozilla Firefox, platform=Linux, language=en_US, timeZon (truncated)...]
+2024-08-02T14:41:59.247+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO LOGIN PROCESSOR.
+2024-08-02T14:41:59.248+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO USERNAME CHECKER.
+2024-08-02T14:41:59.347+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM USERNAME CHECKER.
+2024-08-02T14:41:59.348+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM LOGIN PROCESSOR.
+2024-08-02T14:41:59.355+05:30 DEBUG 70444 --- [heart_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-08-02T14:41:59.356+05:30 DEBUG 70444 --- [heart_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [APIResponse(status=200, data=user-not-available, error=true)]
+2024-08-02T14:41:59.365+05:30 DEBUG 70444 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T14:42:11.177+05:30 DEBUG 70444 --- [heart_backend] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/signup", parameters={}
+2024-08-02T14:42:11.178+05:30 DEBUG 70444 --- [heart_backend] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.heart_backend.heart.controller.AuthController#signup(SignUpRequestDTO, HttpServletRequest)
+2024-08-02T14:42:11.178+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-3] c.h.heart.config.JwtInterceptor          : ENTERED TO PRE HANDLE METHOD.
+2024-08-02T14:42:11.178+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-3] c.h.heart.config.JwtInterceptor          : EXITED FROM PRE HANDLE METHOD.
+2024-08-02T14:42:11.180+05:30 DEBUG 70444 --- [heart_backend] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AdditionalDetails(ipAddress=null, userAgent=Mozilla Firefox, platform=Linux, language=en_US, timeZon (truncated)...]
+2024-08-02T14:42:11.180+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-3] c.h.heart.processor.AuthProcessor        : ENTERED TO SIGNUP PROCESSOR.
+2024-08-02T14:42:11.181+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-3] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING USER PROFILE.
+2024-08-02T14:42:11.181+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-3] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING USER PROFILE.
+2024-08-02T14:42:11.216+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-3] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING DEVICE DETAILS.
+2024-08-02T14:42:11.216+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-3] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING DEVICE DETAILS.
+2024-08-02T14:42:11.218+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-3] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING SESSION.
+2024-08-02T14:42:11.218+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-3] com.heart_backend.heart.util.JwtUtil     : ENTERED TO GENERATE JWT TOKEN METHOD.
+2024-08-02T14:42:11.243+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-3] com.heart_backend.heart.util.JwtUtil     : EXITED FROM GENERATE JWT TOKEN METHOD.
+2024-08-02T14:42:11.243+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-3] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING SESSION.
+2024-08-02T14:42:11.246+05:30 ERROR 70444 --- [heart_backend] [http-nio-8080-exec-3] c.h.heart.processor.AuthProcessor        : Error Occured While Signup : 
+2024-08-02T14:42:11.247+05:30  INFO 70444 --- [heart_backend] [http-nio-8080-exec-3] c.h.heart.processor.AuthProcessor        : EXITED FROM SIGNUP PROCESSOR.
+2024-08-02T14:42:11.252+05:30 DEBUG 70444 --- [heart_backend] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-08-02T14:42:11.253+05:30 DEBUG 70444 --- [heart_backend] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [APIResponse(status=500, data=Error Occured. Please Try again Later., error=true)]
+2024-08-02T14:42:11.254+05:30 DEBUG 70444 --- [heart_backend] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-08-02T14:43:33.328+05:30  INFO 70444 --- [heart_backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2024-08-02T14:43:33.335+05:30  INFO 70444 --- [heart_backend] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:43:33.339+05:30  INFO 70444 --- [heart_backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-02T14:43:33.346+05:30  INFO 70444 --- [heart_backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-02T14:43:33.419+05:30  INFO 70444 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Starting HeartBackendApplication using Java 17.0.11 with PID 70444 (/home/dhinesh/personal/workspace/heart/heart_backend/target/classes started by dhinesh in /home/dhinesh/personal/workspace/heart)
+2024-08-02T14:43:33.420+05:30  INFO 70444 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:43:33.694+05:30  INFO 70444 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:43:33.706+05:30  INFO 70444 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:43:33.855+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:43:33.856+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:43:33.857+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:43:33.865+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:43:33.866+05:30  INFO 70444 --- [heart_backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 444 ms
+2024-08-02T14:43:33.954+05:30 DEBUG 70444 --- [heart_backend] [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-08-02T14:43:34.032+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:43:34.034+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:43:34.045+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:43:34.046+05:30  INFO 70444 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-08-02T14:43:34.050+05:30  INFO 70444 --- [heart_backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ce7c0b2
+2024-08-02T14:43:34.050+05:30  INFO 70444 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-08-02T14:43:34.051+05:30  WARN 70444 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:43:34.052+05:30  WARN 70444 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:43:34.194+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:43:34.236+05:30  INFO 70444 --- [heart_backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:43:34.414+05:30  WARN 70444 --- [heart_backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:43:34.450+05:30 DEBUG 70444 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:43:34.509+05:30 DEBUG 70444 --- [heart_backend] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:43:34.524+05:30 DEBUG 70444 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:43:34.532+05:30 DEBUG 70444 --- [heart_backend] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:43:34.543+05:30  WARN 70444 --- [heart_backend] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-08-02T14:43:34.728+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:43:34.732+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-08-02T14:43:34.755+05:30  INFO 70444 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:43:34.763+05:30  INFO 70444 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Started HeartBackendApplication in 1.369 seconds (process running for 108.494)
+2024-08-02T14:43:34.766+05:30  INFO 70444 --- [heart_backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-02T14:43:44.030+05:30  INFO 70444 --- [heart_backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:43:44.031+05:30  INFO 70444 --- [heart_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-08-02T14:43:44.033+05:30  INFO 70444 --- [heart_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-08-02T14:43:45.265+05:30  INFO 73207 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Starting HeartBackendApplication using Java 17.0.11 with PID 73207 (/home/dhinesh/personal/workspace/heart/heart_backend/target/classes started by dhinesh in /home/dhinesh/personal/workspace/heart)
+2024-08-02T14:43:45.267+05:30  INFO 73207 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:43:45.314+05:30  INFO 73207 --- [heart_backend] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-runtime-2.3.1.jar referenced one or more files that do not exist: file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-api-2.3.1.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/txw2-2.3.1.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/istack-commons-runtime-3.0.7.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/stax-ex-1.8.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/FastInfoset-1.2.15.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/javax.activation-api-1.2.0.jar
+2024-08-02T14:43:45.315+05:30  INFO 73207 --- [heart_backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-02T14:43:45.315+05:30  INFO 73207 --- [heart_backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-02T14:43:46.290+05:30  INFO 73207 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:43:46.346+05:30  INFO 73207 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:43:47.039+05:30  INFO 73207 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:43:47.051+05:30  INFO 73207 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:43:47.052+05:30  INFO 73207 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:43:47.094+05:30  INFO 73207 --- [heart_backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:43:47.095+05:30  INFO 73207 --- [heart_backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1779 ms
+2024-08-02T14:43:47.304+05:30 DEBUG 73207 --- [heart_backend] [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-08-02T14:43:47.429+05:30  INFO 73207 --- [heart_backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:43:47.461+05:30  INFO 73207 --- [heart_backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02T14:43:47.484+05:30  INFO 73207 --- [heart_backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:43:47.674+05:30  INFO 73207 --- [heart_backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:43:47.697+05:30  INFO 73207 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-02T14:43:47.838+05:30  INFO 73207 --- [heart_backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3fc07f14
+2024-08-02T14:43:47.841+05:30  INFO 73207 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-02T14:43:47.884+05:30  WARN 73207 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:43:47.885+05:30  WARN 73207 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:43:48.757+05:30  INFO 73207 --- [heart_backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:43:48.878+05:30  INFO 73207 --- [heart_backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:43:49.357+05:30  WARN 73207 --- [heart_backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:43:49.456+05:30 DEBUG 73207 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:43:49.567+05:30 DEBUG 73207 --- [heart_backend] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:43:49.612+05:30 DEBUG 73207 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:43:49.645+05:30 DEBUG 73207 --- [heart_backend] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:43:49.681+05:30  WARN 73207 --- [heart_backend] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-08-02T14:43:50.051+05:30  INFO 73207 --- [heart_backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:43:50.061+05:30  INFO 73207 --- [heart_backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-08-02T14:43:50.136+05:30  INFO 73207 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:43:50.149+05:30  INFO 73207 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Started HeartBackendApplication in 5.22 seconds (process running for 5.581)
+2024-08-02T14:43:51.231+05:30  INFO 73207 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02T14:43:51.231+05:30  INFO 73207 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-02T14:43:51.232+05:30 DEBUG 73207 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-08-02T14:43:51.232+05:30 DEBUG 73207 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-08-02T14:43:51.232+05:30 DEBUG 73207 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-08-02T14:43:51.233+05:30 DEBUG 73207 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@107c5e8b
+2024-08-02T14:43:51.233+05:30 DEBUG 73207 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@1db8ab63
+2024-08-02T14:43:51.233+05:30 DEBUG 73207 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-08-02T14:43:51.233+05:30  INFO 73207 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-08-02T14:43:54.115+05:30  INFO 73207 --- [heart_backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:43:54.119+05:30  INFO 73207 --- [heart_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-02T14:43:54.126+05:30  INFO 73207 --- [heart_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-02T14:43:59.065+05:30  INFO 73647 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Starting HeartBackendApplication using Java 17.0.11 with PID 73647 (/home/dhinesh/personal/workspace/heart/heart_backend/target/classes started by dhinesh in /home/dhinesh/personal/workspace/heart)
+2024-08-02T14:43:59.067+05:30  INFO 73647 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:43:59.134+05:30  INFO 73647 --- [heart_backend] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-runtime-2.3.1.jar referenced one or more files that do not exist: file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-api-2.3.1.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/txw2-2.3.1.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/istack-commons-runtime-3.0.7.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/stax-ex-1.8.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/FastInfoset-1.2.15.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/javax.activation-api-1.2.0.jar
+2024-08-02T14:43:59.135+05:30  INFO 73647 --- [heart_backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-02T14:43:59.135+05:30  INFO 73647 --- [heart_backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-02T14:44:00.248+05:30  INFO 73647 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:44:00.316+05:30  INFO 73647 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:44:01.122+05:30  INFO 73647 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:44:01.136+05:30  INFO 73647 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:44:01.138+05:30  INFO 73647 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:44:01.180+05:30  INFO 73647 --- [heart_backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:44:01.181+05:30  INFO 73647 --- [heart_backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2045 ms
+2024-08-02T14:44:01.404+05:30 DEBUG 73647 --- [heart_backend] [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-08-02T14:44:01.522+05:30  INFO 73647 --- [heart_backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:44:01.557+05:30  INFO 73647 --- [heart_backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02T14:44:01.593+05:30  INFO 73647 --- [heart_backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:44:01.787+05:30  INFO 73647 --- [heart_backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:44:01.808+05:30  INFO 73647 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-02T14:44:01.943+05:30  INFO 73647 --- [heart_backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ae218f5
+2024-08-02T14:44:01.946+05:30  INFO 73647 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-02T14:44:01.982+05:30  WARN 73647 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:44:01.983+05:30  WARN 73647 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:44:02.826+05:30  INFO 73647 --- [heart_backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:44:02.910+05:30  INFO 73647 --- [heart_backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:44:03.411+05:30  WARN 73647 --- [heart_backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:44:03.523+05:30 DEBUG 73647 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:44:03.681+05:30 DEBUG 73647 --- [heart_backend] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:44:03.730+05:30 DEBUG 73647 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:44:03.765+05:30 DEBUG 73647 --- [heart_backend] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:44:03.801+05:30  WARN 73647 --- [heart_backend] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-08-02T14:44:04.359+05:30  INFO 73647 --- [heart_backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:44:04.376+05:30  INFO 73647 --- [heart_backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-08-02T14:44:04.479+05:30  INFO 73647 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:44:04.499+05:30  INFO 73647 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Started HeartBackendApplication in 5.767 seconds (process running for 6.281)
+2024-08-02T14:44:04.994+05:30  INFO 73647 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02T14:44:04.995+05:30  INFO 73647 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-02T14:44:04.995+05:30 DEBUG 73647 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-08-02T14:44:04.995+05:30 DEBUG 73647 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-08-02T14:44:04.995+05:30 DEBUG 73647 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-08-02T14:44:04.996+05:30 DEBUG 73647 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@27272bdd
+2024-08-02T14:44:04.996+05:30 DEBUG 73647 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@581cff62
+2024-08-02T14:44:04.997+05:30 DEBUG 73647 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-08-02T14:44:04.997+05:30  INFO 73647 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-08-02T14:44:12.624+05:30 DEBUG 73647 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/signup", parameters={}
+2024-08-02T14:44:12.627+05:30 DEBUG 73647 --- [heart_backend] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.heart_backend.heart.controller.AuthController#signup(SignUpRequestDTO, HttpServletRequest)
+2024-08-02T14:44:12.628+05:30  INFO 73647 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.config.JwtInterceptor          : ENTERED TO PRE HANDLE METHOD.
+2024-08-02T14:44:12.628+05:30  INFO 73647 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.config.JwtInterceptor          : EXITED FROM PRE HANDLE METHOD.
+2024-08-02T14:44:12.674+05:30 DEBUG 73647 --- [heart_backend] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AdditionalDetails(ipAddress=null, userAgent=Mozilla Firefox, platform=Linux, language=en_US, timeZon (truncated)...]
+2024-08-02T14:44:12.688+05:30  INFO 73647 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO SIGNUP PROCESSOR.
+2024-08-02T14:44:12.691+05:30  INFO 73647 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING USER PROFILE.
+2024-08-02T14:44:12.691+05:30  INFO 73647 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING USER PROFILE.
+2024-08-02T14:44:12.767+05:30  INFO 73647 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING DEVICE DETAILS.
+2024-08-02T14:44:12.767+05:30  INFO 73647 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING DEVICE DETAILS.
+2024-08-02T14:44:12.771+05:30  INFO 73647 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING SESSION.
+2024-08-02T14:44:12.771+05:30  INFO 73647 --- [heart_backend] [http-nio-8080-exec-1] com.heart_backend.heart.util.JwtUtil     : ENTERED TO GENERATE JWT TOKEN METHOD.
+2024-08-02T14:44:12.797+05:30  INFO 73647 --- [heart_backend] [http-nio-8080-exec-1] com.heart_backend.heart.util.JwtUtil     : EXITED FROM GENERATE JWT TOKEN METHOD.
+2024-08-02T14:44:12.798+05:30  INFO 73647 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING SESSION.
+2024-08-02T14:44:40.797+05:30  INFO 73647 --- [heart_backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2024-08-02T14:44:43.330+05:30  INFO 74792 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Starting HeartBackendApplication using Java 17.0.11 with PID 74792 (/home/dhinesh/personal/workspace/heart/heart_backend/target/classes started by dhinesh in /home/dhinesh/personal/workspace/heart)
+2024-08-02T14:44:43.331+05:30  INFO 74792 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:44:43.375+05:30  INFO 74792 --- [heart_backend] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-runtime-2.3.1.jar referenced one or more files that do not exist: file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-api-2.3.1.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/txw2-2.3.1.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/istack-commons-runtime-3.0.7.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/stax-ex-1.8.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/FastInfoset-1.2.15.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/javax.activation-api-1.2.0.jar
+2024-08-02T14:44:43.376+05:30  INFO 74792 --- [heart_backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-02T14:44:43.376+05:30  INFO 74792 --- [heart_backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-02T14:44:44.479+05:30  INFO 74792 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:44:44.544+05:30  INFO 74792 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:44:45.256+05:30  INFO 74792 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:44:45.265+05:30  INFO 74792 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:44:45.265+05:30  INFO 74792 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:44:45.307+05:30  INFO 74792 --- [heart_backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:44:45.308+05:30  INFO 74792 --- [heart_backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1932 ms
+2024-08-02T14:44:45.500+05:30 DEBUG 74792 --- [heart_backend] [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-08-02T14:44:45.659+05:30  INFO 74792 --- [heart_backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:44:45.708+05:30  INFO 74792 --- [heart_backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02T14:44:45.749+05:30  INFO 74792 --- [heart_backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:44:46.027+05:30  INFO 74792 --- [heart_backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:44:46.056+05:30  INFO 74792 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-02T14:44:46.224+05:30  INFO 74792 --- [heart_backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5df77b1e
+2024-08-02T14:44:46.227+05:30  INFO 74792 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-02T14:44:46.282+05:30  WARN 74792 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:44:46.285+05:30  WARN 74792 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:44:47.342+05:30  INFO 74792 --- [heart_backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:44:47.424+05:30  INFO 74792 --- [heart_backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:44:47.959+05:30  WARN 74792 --- [heart_backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:44:48.075+05:30 DEBUG 74792 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:44:48.198+05:30 DEBUG 74792 --- [heart_backend] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:44:48.243+05:30 DEBUG 74792 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:44:48.279+05:30 DEBUG 74792 --- [heart_backend] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:44:48.325+05:30  WARN 74792 --- [heart_backend] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-08-02T14:44:48.811+05:30  INFO 74792 --- [heart_backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:44:48.833+05:30  INFO 74792 --- [heart_backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-08-02T14:44:48.920+05:30  INFO 74792 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:44:48.941+05:30  INFO 74792 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Started HeartBackendApplication in 5.935 seconds (process running for 6.41)
+2024-08-02T14:44:49.258+05:30  INFO 74792 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02T14:44:49.258+05:30  INFO 74792 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-02T14:44:49.258+05:30 DEBUG 74792 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-08-02T14:44:49.258+05:30 DEBUG 74792 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-08-02T14:44:49.258+05:30 DEBUG 74792 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-08-02T14:44:49.259+05:30 DEBUG 74792 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@415ae5f3
+2024-08-02T14:44:49.260+05:30 DEBUG 74792 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@404abb1
+2024-08-02T14:44:49.260+05:30 DEBUG 74792 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-08-02T14:44:49.260+05:30  INFO 74792 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-08-02T14:45:12.969+05:30 DEBUG 74792 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/signup", parameters={}
+2024-08-02T14:45:12.975+05:30 DEBUG 74792 --- [heart_backend] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.heart_backend.heart.controller.AuthController#signup(SignUpRequestDTO, HttpServletRequest)
+2024-08-02T14:45:12.976+05:30  INFO 74792 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.config.JwtInterceptor          : ENTERED TO PRE HANDLE METHOD.
+2024-08-02T14:45:12.976+05:30  INFO 74792 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.config.JwtInterceptor          : EXITED FROM PRE HANDLE METHOD.
+2024-08-02T14:45:13.031+05:30 DEBUG 74792 --- [heart_backend] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AdditionalDetails(ipAddress=null, userAgent=Mozilla Firefox, platform=Linux, language=en_US, timeZon (truncated)...]
+2024-08-02T14:45:13.044+05:30  INFO 74792 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO SIGNUP PROCESSOR.
+2024-08-02T14:45:13.046+05:30  INFO 74792 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING USER PROFILE.
+2024-08-02T14:45:13.047+05:30  INFO 74792 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING USER PROFILE.
+2024-08-02T14:45:13.135+05:30  INFO 74792 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING DEVICE DETAILS.
+2024-08-02T14:45:13.135+05:30  INFO 74792 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING DEVICE DETAILS.
+2024-08-02T14:45:15.821+05:30  INFO 74792 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING SESSION.
+2024-08-02T14:45:15.830+05:30  INFO 74792 --- [heart_backend] [http-nio-8080-exec-1] com.heart_backend.heart.util.JwtUtil     : ENTERED TO GENERATE JWT TOKEN METHOD.
+2024-08-02T14:45:16.427+05:30  INFO 74792 --- [heart_backend] [http-nio-8080-exec-1] com.heart_backend.heart.util.JwtUtil     : EXITED FROM GENERATE JWT TOKEN METHOD.
+2024-08-02T14:45:16.433+05:30  INFO 74792 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING SESSION.
+2024-08-02T14:45:23.010+05:30  INFO 74792 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM SIGNUP PROCESSOR.
+2024-08-02T14:45:36.457+05:30 DEBUG 74792 --- [heart_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-08-02T14:45:36.481+05:30 DEBUG 74792 --- [heart_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [APIResponse(status=204, data=AuthResponseDTO(id=e497a65eec3c46e4b0c96effe7731d33, accessToken=eyJhbG (truncated)...]
+2024-08-02T14:45:36.903+05:30 DEBUG 74792 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2024-08-02T14:47:34.959+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Starting HeartBackendApplication using Java 17.0.11 with PID 78825 (/home/dhinesh/personal/workspace/heart/heart_backend/target/classes started by dhinesh in /home/dhinesh/personal/workspace/heart)
+2024-08-02T14:47:34.961+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:47:35.001+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-runtime-2.3.1.jar referenced one or more files that do not exist: file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-api-2.3.1.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/txw2-2.3.1.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/istack-commons-runtime-3.0.7.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/stax-ex-1.8.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/FastInfoset-1.2.15.jar,file:/home/dhinesh/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/javax.activation-api-1.2.0.jar
+2024-08-02T14:47:35.002+05:30  INFO 78825 --- [heart_backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-02T14:47:35.002+05:30  INFO 78825 --- [heart_backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-02T14:47:35.845+05:30  INFO 78825 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:47:35.899+05:30  INFO 78825 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:47:36.678+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:47:36.689+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:47:36.689+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:47:36.726+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:47:36.727+05:30  INFO 78825 --- [heart_backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1725 ms
+2024-08-02T14:47:36.956+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-08-02T14:47:37.100+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:47:37.143+05:30  INFO 78825 --- [heart_backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02T14:47:37.174+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:47:37.440+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:47:37.467+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-02T14:47:37.612+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@c961d32
+2024-08-02T14:47:37.615+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-02T14:47:37.715+05:30  WARN 78825 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:47:37.717+05:30  WARN 78825 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:47:38.481+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:47:38.556+05:30  INFO 78825 --- [heart_backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:47:38.980+05:30  WARN 78825 --- [heart_backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:47:39.116+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:47:39.258+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:47:39.298+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:47:39.331+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:47:39.366+05:30  WARN 78825 --- [heart_backend] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-08-02T14:47:39.749+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:47:39.758+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-08-02T14:47:39.830+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:47:39.845+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Started HeartBackendApplication in 5.19 seconds (process running for 5.535)
+2024-08-02T14:47:40.962+05:30  INFO 78825 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02T14:47:40.962+05:30  INFO 78825 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-02T14:47:40.963+05:30 DEBUG 78825 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-08-02T14:47:40.963+05:30 DEBUG 78825 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-08-02T14:47:40.963+05:30 DEBUG 78825 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-08-02T14:47:40.964+05:30 DEBUG 78825 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@549acba4
+2024-08-02T14:47:40.965+05:30 DEBUG 78825 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@1a5d2482
+2024-08-02T14:47:40.965+05:30 DEBUG 78825 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-08-02T14:47:40.965+05:30  INFO 78825 --- [heart_backend] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-08-02T14:47:45.848+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2024-08-02T14:47:45.852+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.heart_backend.heart.controller.AuthController#login(LoginRequestDTO, HttpServletRequest)
+2024-08-02T14:47:45.852+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.config.JwtInterceptor          : ENTERED TO PRE HANDLE METHOD.
+2024-08-02T14:47:45.852+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.config.JwtInterceptor          : EXITED FROM PRE HANDLE METHOD.
+2024-08-02T14:47:45.893+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AdditionalDetails(ipAddress=null, userAgent=Mozilla Firefox, platform=Linux, language=en_US, timeZon (truncated)...]
+2024-08-02T14:47:45.903+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO LOGIN PROCESSOR.
+2024-08-02T14:47:45.903+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO USERNAME CHECKER.
+2024-08-02T14:47:46.007+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM USERNAME CHECKER.
+2024-08-02T14:47:46.007+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING DEVICE DETAILS.
+2024-08-02T14:47:46.007+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING DEVICE DETAILS.
+2024-08-02T14:47:46.042+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING SESSION.
+2024-08-02T14:47:46.042+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] com.heart_backend.heart.util.JwtUtil     : ENTERED TO GENERATE JWT TOKEN METHOD.
+2024-08-02T14:47:46.070+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] com.heart_backend.heart.util.JwtUtil     : EXITED FROM GENERATE JWT TOKEN METHOD.
+2024-08-02T14:47:46.071+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING SESSION.
+2024-08-02T14:47:46.080+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : APIResponse(status=204, data=AuthResponseDTO(id=e497a65eec3c46e4b0c96effe7731d33, accessToken=eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJlNDk3YTY1ZWVjM2M0NmU0YjBjOTZlZmZlNzczMWQzMyIsImlhdCI6MTcyMjU5MDI2Niwic3ViIjoiaXNodTEyMyIsImV4cCI6MTcyMjYzMzQ2Nn0.lF_k3HrfMr3Cnz1Bv6UvIFDG7SFI8tPmwOmlLCFAc2cq5MgCvCLf3MtI-j75xoUTfUnn4eOQul4iZZT6IO5mzg, refreshToken=eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJlNDk3YTY1ZWVjM2M0NmU0YjBjOTZlZmZlNzczMWQzMyIsImlhdCI6MTcyMjU5MDI2Niwic3ViIjoiaXNodTEyMyIsImV4cCI6MTcyMzg4NjI2Nn0.ZUODKvS3bw3WFpDRA_GYrEMYbEdx7QzOyv0GWSqQSnu9D-484sztrdrUSH3Yrpci, sessionID=876655e6d4214130ae4410134a0191b9), error=false)
+2024-08-02T14:47:46.080+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM LOGIN PROCESSOR.
+2024-08-02T14:47:46.095+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-08-02T14:47:46.097+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [APIResponse(status=204, data=AuthResponseDTO(id=e497a65eec3c46e4b0c96effe7731d33, accessToken=eyJhbG (truncated)...]
+2024-08-02T14:47:46.106+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2024-08-02T14:48:13.181+05:30  INFO 78825 --- [heart_backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2024-08-02T14:48:13.189+05:30  INFO 78825 --- [heart_backend] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:48:13.192+05:30  INFO 78825 --- [heart_backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-02T14:48:13.197+05:30  INFO 78825 --- [heart_backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-02T14:48:13.268+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Starting HeartBackendApplication using Java 17.0.11 with PID 78825 (/home/dhinesh/personal/workspace/heart/heart_backend/target/classes started by dhinesh in /home/dhinesh/personal/workspace/heart)
+2024-08-02T14:48:13.269+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:48:13.550+05:30  INFO 78825 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:48:13.569+05:30  INFO 78825 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:48:13.738+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:48:13.738+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:48:13.739+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:48:13.747+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:48:13.748+05:30  INFO 78825 --- [heart_backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 478 ms
+2024-08-02T14:48:13.844+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-08-02T14:48:13.908+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:48:13.910+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:48:13.919+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:48:13.920+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-08-02T14:48:13.923+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3f1f963a
+2024-08-02T14:48:13.923+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-08-02T14:48:13.924+05:30  WARN 78825 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:48:13.924+05:30  WARN 78825 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:48:14.050+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:48:14.091+05:30  INFO 78825 --- [heart_backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:48:14.275+05:30  WARN 78825 --- [heart_backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:48:14.305+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:48:14.388+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:48:14.409+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:48:14.421+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:48:14.433+05:30  WARN 78825 --- [heart_backend] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-08-02T14:48:14.615+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:48:14.619+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-08-02T14:48:14.640+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:48:14.646+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Started HeartBackendApplication in 1.402 seconds (process running for 40.336)
+2024-08-02T14:48:14.650+05:30  INFO 78825 --- [heart_backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-02T14:48:28.027+05:30  INFO 78825 --- [heart_backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-02T14:48:28.031+05:30  INFO 78825 --- [heart_backend] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:48:28.032+05:30  INFO 78825 --- [heart_backend] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-08-02T14:48:28.034+05:30  INFO 78825 --- [heart_backend] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-08-02T14:48:28.098+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Starting HeartBackendApplication using Java 17.0.11 with PID 78825 (/home/dhinesh/personal/workspace/heart/heart_backend/target/classes started by dhinesh in /home/dhinesh/personal/workspace/heart)
+2024-08-02T14:48:28.099+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:48:28.359+05:30  INFO 78825 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:48:28.375+05:30  INFO 78825 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:48:28.490+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:48:28.491+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:48:28.491+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:48:28.501+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:48:28.501+05:30  INFO 78825 --- [heart_backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 401 ms
+2024-08-02T14:48:28.549+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-08-02T14:48:28.582+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:48:28.583+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:48:28.587+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:48:28.588+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-08-02T14:48:28.591+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@11445140
+2024-08-02T14:48:28.591+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-08-02T14:48:28.591+05:30  WARN 78825 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:48:28.591+05:30  WARN 78825 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:48:28.667+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:48:28.690+05:30  INFO 78825 --- [heart_backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:48:28.806+05:30  WARN 78825 --- [heart_backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:48:28.836+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:48:28.894+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:48:28.907+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:48:28.912+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:48:28.922+05:30  WARN 78825 --- [heart_backend] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-08-02T14:48:29.085+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:48:29.089+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-08-02T14:48:29.108+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:48:29.115+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Started HeartBackendApplication in 1.041 seconds (process running for 54.805)
+2024-08-02T14:48:29.117+05:30  INFO 78825 --- [heart_backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-02T14:48:34.964+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02T14:48:34.964+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-02T14:48:34.964+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-08-02T14:48:34.964+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-08-02T14:48:34.964+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-08-02T14:48:34.965+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5a71a6f
+2024-08-02T14:48:34.965+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@47491e9e
+2024-08-02T14:48:34.965+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-08-02T14:48:34.965+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-08-02T14:48:34.966+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2024-08-02T14:48:34.966+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.heart_backend.heart.controller.AuthController#login(LoginRequestDTO, HttpServletRequest)
+2024-08-02T14:48:34.966+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.config.JwtInterceptor          : ENTERED TO PRE HANDLE METHOD.
+2024-08-02T14:48:34.966+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.config.JwtInterceptor          : EXITED FROM PRE HANDLE METHOD.
+2024-08-02T14:48:34.969+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AdditionalDetails(ipAddress=null, userAgent=Mozilla Firefox, platform=Linux, language=en_US, timeZon (truncated)...]
+2024-08-02T14:48:34.970+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : ENTERED TO LOGIN PROCESSOR.
+2024-08-02T14:48:34.970+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : ENTERED TO USERNAME CHECKER.
+2024-08-02T14:48:34.975+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : EXITED FROM USERNAME CHECKER.
+2024-08-02T14:48:34.976+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING DEVICE DETAILS.
+2024-08-02T14:48:34.976+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING DEVICE DETAILS.
+2024-08-02T14:48:34.980+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING SESSION.
+2024-08-02T14:48:34.980+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-2] com.heart_backend.heart.util.JwtUtil     : ENTERED TO GENERATE JWT TOKEN METHOD.
+2024-08-02T14:48:34.982+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-2] com.heart_backend.heart.util.JwtUtil     : EXITED FROM GENERATE JWT TOKEN METHOD.
+2024-08-02T14:48:34.982+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING SESSION.
+2024-08-02T14:48:34.986+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-2] c.h.heart.processor.AuthProcessor        : EXITED FROM LOGIN PROCESSOR.
+2024-08-02T14:48:34.989+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-08-02T14:48:34.989+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [APIResponse(status=204, data=AuthResponseDTO(id=e497a65eec3c46e4b0c96effe7731d33, accessToken=eyJhbG (truncated)...]
+2024-08-02T14:48:34.990+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2024-08-02T14:48:46.507+05:30  INFO 78825 --- [heart_backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-02T14:48:46.516+05:30  INFO 78825 --- [heart_backend] [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:48:46.518+05:30  INFO 78825 --- [heart_backend] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-08-02T14:48:46.522+05:30  INFO 78825 --- [heart_backend] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-08-02T14:48:46.584+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Starting HeartBackendApplication using Java 17.0.11 with PID 78825 (/home/dhinesh/personal/workspace/heart/heart_backend/target/classes started by dhinesh in /home/dhinesh/personal/workspace/heart)
+2024-08-02T14:48:46.585+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:48:46.748+05:30  INFO 78825 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:48:46.756+05:30  INFO 78825 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:48:46.853+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:48:46.854+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:48:46.854+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:48:46.859+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:48:46.859+05:30  INFO 78825 --- [heart_backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 273 ms
+2024-08-02T14:48:46.907+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-08-02T14:48:46.939+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:48:46.941+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:48:46.945+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:48:46.945+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-08-02T14:48:46.949+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45048e91
+2024-08-02T14:48:46.950+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-08-02T14:48:46.950+05:30  WARN 78825 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:48:46.950+05:30  WARN 78825 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:48:47.034+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:48:47.058+05:30  INFO 78825 --- [heart_backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:48:47.206+05:30  WARN 78825 --- [heart_backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:48:47.243+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:48:47.301+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:48:47.320+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:48:47.329+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:48:47.343+05:30  WARN 78825 --- [heart_backend] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-08-02T14:48:47.513+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:48:47.517+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-08-02T14:48:47.537+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:48:47.541+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Started HeartBackendApplication in 0.976 seconds (process running for 73.232)
+2024-08-02T14:48:47.544+05:30  INFO 78825 --- [heart_backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-02T14:48:58.925+05:30  INFO 78825 --- [heart_backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-02T14:48:58.928+05:30  INFO 78825 --- [heart_backend] [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:48:58.929+05:30  INFO 78825 --- [heart_backend] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2024-08-02T14:48:58.930+05:30  INFO 78825 --- [heart_backend] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2024-08-02T14:48:58.989+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Starting HeartBackendApplication using Java 17.0.11 with PID 78825 (/home/dhinesh/personal/workspace/heart/heart_backend/target/classes started by dhinesh in /home/dhinesh/personal/workspace/heart)
+2024-08-02T14:48:58.989+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:48:59.155+05:30  INFO 78825 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:48:59.162+05:30  INFO 78825 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:48:59.252+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:48:59.253+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:48:59.253+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:48:59.259+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:48:59.259+05:30  INFO 78825 --- [heart_backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 268 ms
+2024-08-02T14:48:59.316+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-08-02T14:48:59.350+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:48:59.351+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:48:59.355+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:48:59.356+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2024-08-02T14:48:59.358+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68e3b640
+2024-08-02T14:48:59.359+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2024-08-02T14:48:59.359+05:30  WARN 78825 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:48:59.360+05:30  WARN 78825 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:48:59.437+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:48:59.458+05:30  INFO 78825 --- [heart_backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:48:59.616+05:30  WARN 78825 --- [heart_backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:48:59.648+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:48:59.698+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:48:59.713+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:48:59.720+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:48:59.731+05:30  WARN 78825 --- [heart_backend] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-08-02T14:48:59.889+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:48:59.893+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-08-02T14:48:59.910+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:48:59.914+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Started HeartBackendApplication in 0.944 seconds (process running for 85.605)
+2024-08-02T14:48:59.916+05:30  INFO 78825 --- [heart_backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-02T14:49:20.314+05:30  INFO 78825 --- [heart_backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-02T14:49:20.320+05:30  INFO 78825 --- [heart_backend] [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:49:20.321+05:30  INFO 78825 --- [heart_backend] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2024-08-02T14:49:20.326+05:30  INFO 78825 --- [heart_backend] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2024-08-02T14:49:20.389+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Starting HeartBackendApplication using Java 17.0.11 with PID 78825 (/home/dhinesh/personal/workspace/heart/heart_backend/target/classes started by dhinesh in /home/dhinesh/personal/workspace/heart)
+2024-08-02T14:49:20.389+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:49:20.520+05:30  INFO 78825 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:49:20.528+05:30  INFO 78825 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:49:20.632+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:49:20.633+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:49:20.633+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:49:20.639+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:49:20.640+05:30  INFO 78825 --- [heart_backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 250 ms
+2024-08-02T14:49:20.695+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-08-02T14:49:20.723+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:49:20.724+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:49:20.729+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:49:20.729+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2024-08-02T14:49:20.732+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@51554102
+2024-08-02T14:49:20.732+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2024-08-02T14:49:20.733+05:30  WARN 78825 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:49:20.733+05:30  WARN 78825 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:49:20.791+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:49:20.818+05:30  INFO 78825 --- [heart_backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:49:20.908+05:30  WARN 78825 --- [heart_backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:49:20.926+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:49:20.966+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:49:20.978+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:49:20.986+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:49:20.994+05:30  WARN 78825 --- [heart_backend] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-08-02T14:49:21.147+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:49:21.152+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-08-02T14:49:21.178+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:49:21.182+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Started HeartBackendApplication in 0.808 seconds (process running for 106.873)
+2024-08-02T14:49:21.186+05:30  INFO 78825 --- [heart_backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-02T14:49:43.562+05:30  INFO 78825 --- [heart_backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2024-08-02T14:49:43.565+05:30  INFO 78825 --- [heart_backend] [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:49:43.566+05:30  INFO 78825 --- [heart_backend] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2024-08-02T14:49:43.568+05:30  INFO 78825 --- [heart_backend] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2024-08-02T14:49:43.630+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Starting HeartBackendApplication using Java 17.0.11 with PID 78825 (/home/dhinesh/personal/workspace/heart/heart_backend/target/classes started by dhinesh in /home/dhinesh/personal/workspace/heart)
+2024-08-02T14:49:43.630+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:49:43.769+05:30  INFO 78825 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:49:43.777+05:30  INFO 78825 --- [heart_backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:49:43.896+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:49:43.897+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:49:43.897+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:49:43.902+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:49:43.903+05:30  INFO 78825 --- [heart_backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 271 ms
+2024-08-02T14:49:43.955+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2024-08-02T14:49:43.987+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:49:43.989+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:49:43.993+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:49:43.993+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2024-08-02T14:49:43.996+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@40546f36
+2024-08-02T14:49:43.997+05:30  INFO 78825 --- [heart_backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2024-08-02T14:49:43.998+05:30  WARN 78825 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:49:43.998+05:30  WARN 78825 --- [heart_backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:49:44.146+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:49:44.173+05:30  INFO 78825 --- [heart_backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:49:44.301+05:30  WARN 78825 --- [heart_backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:49:44.331+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:49:44.378+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:49:44.390+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:49:44.398+05:30 DEBUG 78825 --- [heart_backend] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:49:44.406+05:30  WARN 78825 --- [heart_backend] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-08-02T14:49:44.579+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:49:44.584+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-08-02T14:49:44.606+05:30  INFO 78825 --- [heart_backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:49:44.610+05:30  INFO 78825 --- [heart_backend] [restartedMain] c.h.heart.HeartBackendApplication        : Started HeartBackendApplication in 0.996 seconds (process running for 130.301)
+2024-08-02T14:49:44.612+05:30  INFO 78825 --- [heart_backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-02T14:49:48.097+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02T14:49:48.098+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-02T14:49:48.098+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-08-02T14:49:48.098+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-08-02T14:49:48.098+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-08-02T14:49:48.098+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5216f30f
+2024-08-02T14:49:48.098+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@76e3e6c
+2024-08-02T14:49:48.098+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-08-02T14:49:48.098+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-08-02T14:49:48.099+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2024-08-02T14:49:48.099+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.heart_backend.heart.controller.AuthController#login(LoginRequestDTO, HttpServletRequest)
+2024-08-02T14:49:48.099+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.config.JwtInterceptor          : ENTERED TO PRE HANDLE METHOD.
+2024-08-02T14:49:48.099+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.config.JwtInterceptor          : EXITED FROM PRE HANDLE METHOD.
+2024-08-02T14:49:48.101+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AdditionalDetails(ipAddress=null, userAgent=Mozilla Firefox, platform=Linux, language=en_US, timeZon (truncated)...]
+2024-08-02T14:49:48.102+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO LOGIN PROCESSOR.
+2024-08-02T14:49:48.102+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO USERNAME CHECKER.
+2024-08-02T14:49:48.108+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM USERNAME CHECKER.
+2024-08-02T14:49:48.109+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING DEVICE DETAILS.
+2024-08-02T14:49:48.110+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING DEVICE DETAILS.
+2024-08-02T14:49:48.113+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : ENTERED TO SAVING SESSION.
+2024-08-02T14:49:48.113+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] com.heart_backend.heart.util.JwtUtil     : ENTERED TO GENERATE JWT TOKEN METHOD.
+2024-08-02T14:49:48.114+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] com.heart_backend.heart.util.JwtUtil     : EXITED FROM GENERATE JWT TOKEN METHOD.
+2024-08-02T14:49:48.115+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM SAVING SESSION.
+2024-08-02T14:49:48.117+05:30  INFO 78825 --- [heart_backend] [http-nio-8080-exec-1] c.h.heart.processor.AuthProcessor        : EXITED FROM LOGIN PROCESSOR.
+2024-08-02T14:49:48.120+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-08-02T14:49:48.120+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [APIResponse(status=200, data=AuthResponseDTO(id=e497a65eec3c46e4b0c96effe7731d33, accessToken=eyJhbG (truncated)...]
+2024-08-02T14:49:48.122+05:30 DEBUG 78825 --- [heart_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T14:49:55.418+05:30  INFO 78825 --- [heart_backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:49:55.419+05:30  INFO 78825 --- [heart_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2024-08-02T14:49:55.423+05:30  INFO 78825 --- [heart_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.

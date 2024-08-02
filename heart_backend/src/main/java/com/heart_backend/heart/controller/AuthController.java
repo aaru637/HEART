@@ -1,6 +1,5 @@
 package com.heart_backend.heart.controller;
 
-import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,14 +25,13 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<APIResponse> signup(@RequestBody SignUpRequestDTO signUpRequestDTO,
-            HttpServletRequest request) throws BadRequestException {
+            HttpServletRequest request) {
         APIResponse apiResponse = authService.signup(signUpRequestDTO, request);
         return ResponseEntity.status(apiResponse.getStatus()).body(apiResponse);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<APIResponse> login(@RequestBody LoginRequestDTO loginRequestDTO, HttpServletRequest request)
-            throws BadRequestException {
+    public ResponseEntity<APIResponse> login(@RequestBody LoginRequestDTO loginRequestDTO, HttpServletRequest request) {
         APIResponse apiResponse = authService.login(loginRequestDTO, request);
         return ResponseEntity.status(apiResponse.getStatus()).body(apiResponse);
     }
