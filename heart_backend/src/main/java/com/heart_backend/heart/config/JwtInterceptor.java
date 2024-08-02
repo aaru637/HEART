@@ -1,6 +1,9 @@
 package com.heart_backend.heart.config;
 
 import java.time.LocalDateTime;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
@@ -21,6 +24,8 @@ import jakarta.servlet.http.HttpServletResponse;
 @Component
 public class JwtInterceptor implements HandlerInterceptor {
 
+    private static final Logger LOG = LoggerFactory.getLogger(JwtInterceptor.class);
+
     @Autowired
     private JwtUtil jwtUtil;
 
@@ -37,6 +42,7 @@ public class JwtInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
+        LOG.info("ENTERED TO PRE HANDLE METHOD.");
         String auth = request.getHeader("Authorization");
         String token, secret;
         if (!(request.getRequestURI().contains("auth"))) {
@@ -49,6 +55,7 @@ public class JwtInterceptor implements HandlerInterceptor {
                     APIResponse apiResponse = new APIResponse(HttpStatus.UNAUTHORIZED.value(), "Access token Expired",
                             "true");
                     response.sendError(HttpServletResponse.SC_UNAUTHORIZED, apiResponse.toString());
+                    LOG.info("ACCESS TOKEN EXPIRED.");
                 }
                 try {
                     Claims claims = jwtUtil.verify(token, secret);
@@ -59,15 +66,18 @@ public class JwtInterceptor implements HandlerInterceptor {
                     APIResponse apiResponse = new APIResponse(HttpStatus.UNAUTHORIZED.value(), "Invalid Access Token",
                             "true");
                     response.sendError(HttpServletResponse.SC_UNAUTHORIZED, apiResponse.toString());
+                    LOG.error("Exception Occured While Validating JWT Credentials : ", e);
                     return false;
                 }
             } else {
                 APIResponse apiResponse = new APIResponse(HttpStatus.UNAUTHORIZED.value(), "Invalid Access Token",
                         "true");
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED, apiResponse.toString());
+                LOG.info("INVALID ACCESS TOKEN : ", apiResponse);
                 return false;
             }
         }
+        LOG.info("EXITED FROM PRE HANDLE METHOD.");
         return HandlerInterceptor.super.preHandle(request, response, handler);
     }
 

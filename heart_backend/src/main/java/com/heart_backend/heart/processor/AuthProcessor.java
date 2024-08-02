@@ -1,9 +1,11 @@
 package com.heart_backend.heart.processor;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,6 +33,8 @@ import com.heart_backend.heart.util.LocalDateTimeFormatter;
 @Service
 public class AuthProcessor {
 
+    private static final Logger LOG = LoggerFactory.getLogger(AuthProcessor.class);
+
     @Autowired
     private UserRepository userRepository;
 
@@ -52,6 +56,7 @@ public class AuthProcessor {
     @Transactional
     public APIResponse signupProcessor(SignUpRequestDTO signUpRequestDTO) {
         APIResponse apiResponse = new APIResponse();
+        LOG.info("ENTERED TO SIGNUP PROCESSOR.");
         try {
             Map<String, String> ids = idGenerator();
             String userId = ids.get("userId");
@@ -66,6 +71,7 @@ public class AuthProcessor {
             user.setPassword(signUpRequestDTO.getPassword());
             user.setUsername(signUpRequestDTO.getUsername());
             user.setEmail(signUpRequestDTO.getEmail());
+            user = userRepository.save(user);
 
             /*
              * To save the UserProfile Details
@@ -85,17 +91,13 @@ public class AuthProcessor {
             /*
              * To add the session to the User
              */
-            user.setSessions(new ArrayList<>() {
-                {
-                    add(session);
-                }
-            });
+            user.setSessions(session);
             /*
              * To add the User Profile to the User
              */
             user.setProfile(userProfile);
 
-            user = userRepository.save(user);
+            userRepository.save(user);
 
             /*
              * Configuring API Response
@@ -108,9 +110,9 @@ public class AuthProcessor {
             apiResponse.setStatus(AuthConstants.SERVER_ERROR);
             apiResponse.setData(AuthConstants.ERROR_STRING);
             apiResponse.setError(AuthConstants.SUCCESS);
-            e.printStackTrace();
-            // LOG.error("Error Occured While Signup : ", e.toString());
+            LOG.error("Error Occured While Signup : ", e.toString());
         }
+        LOG.info("EXITED FROM SIGNUP PROCESSOR.");
         return apiResponse;
     }
 
@@ -120,28 +122,66 @@ public class AuthProcessor {
     @Transactional
     public APIResponse loginProcessor(LoginRequestDTO loginRequestDTO) {
         APIResponse apiResponse = new APIResponse();
+        LOG.info("ENTERED TO LOGIN PROCESSOR.");
         try {
-            Map<String, String> ids = idGenerator();
-            String sessionId = ids.get("sessionId");
-            String secret = ids.get("secret");
 
             User user = (User) usernameCheckProcessor(loginRequestDTO.getUsername(), true).getData();
-            System.out.println(user);
             /*
              * To check the username is available or not
              */
             if (user != null) {
+                /*
+                 * username and password both are matched
+                 */
                 if (loginRequestDTO.getPassword().equals(user.getPassword())) {
-                    System.out.println("Username : " + user.getUsername() + " Password : " + user.getPassword());
-                } else {
 
+                    /*
+                     * To generate Unique ID's
+                     */
+                    Map<String, String> ids = idGenerator();
+                    String sessionId = ids.get("sessionId");
+                    String secret = ids.get("secret");
+
+                    /*
+                     * To store Device Details
+                     */
+                    DeviceDetails deviceDetails = saveDeviceDetails(loginRequestDTO, sessionId);
+
+                    /*
+                     * To store Session Details
+                     */
+                    Session session = saveLoginSession(deviceDetails, user, sessionId, secret);
+
+                    /*
+                     * To store Session Details
+                     */
+                    user.setSessions(session);
+                    userRepository.save(user);
+
+                    /*
+                     * Configuring API Response
+                     */
+                    apiResponse.setStatus(AuthConstants.CREATED);
+                    apiResponse.setData(new AuthResponseDTO(user.getUserId(), session.getAccessToken(),
+                            session.getRefreshToken(), session.getSessionId()));
+                    apiResponse.setError(AuthConstants.FAILURE);
+                } else {
+                    apiResponse.setStatus(AuthConstants.RESPONSE_OK);
+                    apiResponse.setData(AuthConstants.USERNAME_PASSWORD_NOT_FOUND);
+                    apiResponse.setError(AuthConstants.SUCCESS);
                 }
             } else {
-                System.out.println(AuthConstants.USERNAME_PASSWORD_NOT_FOUND);
+                apiResponse.setStatus(AuthConstants.RESPONSE_OK);
+                apiResponse.setData(AuthConstants.USER_NOT_AVAILABLE);
+                apiResponse.setError(AuthConstants.SUCCESS);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            apiResponse.setStatus(AuthConstants.SERVER_ERROR);
+            apiResponse.setData(AuthConstants.ERROR_STRING);
+            apiResponse.setError(AuthConstants.SUCCESS);
+            LOG.error("Error Occured While Login : ", e.toString());
         }
+        LOG.info("EXITED FROM LOGIN PROCESSOR.");
         return apiResponse;
     }
 
@@ -150,6 +190,7 @@ public class AuthProcessor {
      */
     public APIResponse usernameCheckProcessor(String username, Boolean innerRequest) {
         APIResponse apiResponse = new APIResponse();
+        LOG.info("ENTERED TO USERNAME CHECKER.");
         User user = null;
         try {
             user = userRepository.findByUsername(username);
@@ -166,7 +207,9 @@ public class AuthProcessor {
             apiResponse.setStatus(AuthConstants.SERVER_ERROR);
             apiResponse.setData(innerRequest ? user : AuthConstants.ERROR_STRING);
             apiResponse.setError(AuthConstants.FAILURE);
+            LOG.error("Error Occured While Checking Username : ", e.toString());
         }
+        LOG.info("EXITED FROM USERNAME CHECKER.");
         return apiResponse;
     }
 
@@ -174,9 +217,11 @@ public class AuthProcessor {
      * To Store UserProfile Details
      */
     private UserProfile saveUserProfile(String userId, String fullName) {
+        LOG.info("ENTERED TO SAVING USER PROFILE.");
         UserProfile userProfile = new UserProfile();
         userProfile.setUserProfileId(userId);
         userProfile.setFullName(fullName);
+        LOG.info("EXITED FROM SAVING USER PROFILE.");
         return userProfileRepository.save(userProfile);
     }
 
@@ -184,6 +229,7 @@ public class AuthProcessor {
      * To Store DeviceDetails
      */
     private DeviceDetails saveDeviceDetails(AdditionalDetails details, String sessionId) {
+        LOG.info("ENTERED TO SAVING DEVICE DETAILS.");
         DeviceDetails deviceDetails = new DeviceDetails();
         deviceDetails.setBrowser(details.getBrowser());
         deviceDetails.setCpu(details.getCpu());
@@ -195,7 +241,7 @@ public class AuthProcessor {
         deviceDetails.setPlatform(details.getPlatform());
         deviceDetails.setTimeZone(details.getTimeZone());
         deviceDetails.setUserAgent(details.getUserAgent());
-
+        LOG.info("EXITED FROM SAVING DEVICE DETAILS.");
         return deviceDetailsRepository.save(deviceDetails);
     }
 
@@ -203,6 +249,7 @@ public class AuthProcessor {
      * To Store Login Session Details
      */
     private Session saveLoginSession(DeviceDetails deviceDetails, User user, String sessionId, String secret) {
+        LOG.info("ENTERED TO SAVING SESSION.");
         Map<String, Object> jwtCredentials = jwtUtil.generateJWTToken(user.getUserId(), secret, user.getUsername());
         Session session = new Session();
         session.setSessionId(sessionId);
@@ -216,6 +263,7 @@ public class AuthProcessor {
                 LocalDateTimeFormatter.objectToLocalDateTime(jwtCredentials.get("refreshTokenExpiryTime")));
         session.setSecretKey(secret);
         session.setDeviceDetails(deviceDetails);
+        LOG.info("EXITED FROM SAVING SESSION.");
         return sessionRepository.save(session);
     }
 

@@ -11,7 +11,7 @@ import com.heart_backend.heart.common.APIResponse;
 import com.heart_backend.heart.dto.LoginRequestDTO;
 import com.heart_backend.heart.dto.SignUpRequestDTO;
 import com.heart_backend.heart.service.AuthService;
-
+import java.util.Map;
 import jakarta.servlet.http.HttpServletRequest;
 
 /**
@@ -35,6 +35,12 @@ public class AuthController {
     public ResponseEntity<APIResponse> login(@RequestBody LoginRequestDTO loginRequestDTO, HttpServletRequest request)
             throws BadRequestException {
         APIResponse apiResponse = authService.login(loginRequestDTO, request);
+        return ResponseEntity.status(apiResponse.getStatus()).body(apiResponse);
+    }
+
+    @PostMapping("/username")
+    public ResponseEntity<APIResponse> usernameChecker(@RequestBody Map<String, String> requestBody) {
+        APIResponse apiResponse = authService.usernameChecker(requestBody);
         return ResponseEntity.status(apiResponse.getStatus()).body(apiResponse);
     }
 }

@@ -76,4 +76,8 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     @JsonManagedReference
     private List<Session> sessions;
+
+    public void setSessions(Session session) {
+        this.sessions.add(session);
+    }
 }

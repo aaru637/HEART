@@ -1,5 +1,7 @@
 package com.heart_backend.heart.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
@@ -18,7 +20,10 @@ import java.util.HashMap;
 @Component
 public class JwtUtil {
 
+        private static final Logger LOG = LoggerFactory.getLogger(JwtUtil.class);
+
         public Map<String, Object> generateJWTToken(String id, String secret, String username) {
+                LOG.info("ENTERED TO GENERATE JWT TOKEN METHOD.");
                 Map<String, Object> result = new HashMap<>();
 
                 Date accessTokenExpiryTime = Date
@@ -47,6 +52,7 @@ public class JwtUtil {
                 result.put("refreshToken", refreshToken);
                 result.put("accessTokenExpiryTime", accessTokenExpiryTime);
                 result.put("refreshTokenExpiryTime", refreshTokenExpiryTime);
+                LOG.info("EXITED FROM GENERATE JWT TOKEN METHOD.");
                 return result;
         }
 

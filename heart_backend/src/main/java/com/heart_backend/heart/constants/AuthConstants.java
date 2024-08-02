@@ -11,6 +11,7 @@ public class AuthConstants {
     public static final String USERNAME_PASSWORD_NOT_FOUND = "user-credentials-not-found";
     public static final String USERNAME_AVAILABLE = "username-available";
     public static final String USERNAME_NOT_AVAILABLE = "username-not-available";
+    public static final String USER_NOT_AVAILABLE = "user-not-available";
     public static final String ERROR_STRING = "Error Occured. Please Try again Later.";
     public static final String STATUS = "status";
     public static final String SUCCESS = "true";
