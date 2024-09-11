@@ -1,6 +1,5 @@
 package com.heart_backend.heart.processor;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
@@ -59,10 +58,9 @@ public class AuthProcessor {
         APIResponse apiResponse = new APIResponse();
         LOG.info("ENTERED TO SIGNUP PROCESSOR.");
         try {
-            Map<String, String> ids = idGenerator();
-            String userId = ids.get("userId");
-            String sessionId = ids.get("sessionId");
-            String secret = ids.get("secret");
+            String userId = idGenerator();
+            String sessionId = idGenerator();
+            String secret = idGenerator();
 
             /*
              * To save the UserProfile Details
@@ -133,9 +131,8 @@ public class AuthProcessor {
                     /*
                      * To generate Unique ID's
                      */
-                    Map<String, String> ids = idGenerator();
-                    String sessionId = ids.get("sessionId");
-                    String secret = ids.get("secret");
+                    String sessionId = idGenerator();
+                    String secret = idGenerator();
 
                     /*
                      * To store Device Details
@@ -245,7 +242,8 @@ public class AuthProcessor {
     private UserProfile saveUserProfile(String userId, String fullName) {
         LOG.info("ENTERED TO SAVING USER PROFILE.");
         UserProfile userProfile = new UserProfile();
-        userProfile.setUserProfileId(userId);
+        userProfile.setUserProfileId(idGenerator());
+        userProfile.setUserId(userId);
         userProfile.setFullName(fullName);
         LOG.info("EXITED FROM SAVING USER PROFILE.");
         return userProfileRepository.save(userProfile);
@@ -260,7 +258,8 @@ public class AuthProcessor {
         deviceDetails.setBrowser(details.getBrowser());
         deviceDetails.setCpu(details.getCpu());
         deviceDetails.setDevice(details.getDevice());
-        deviceDetails.setDeviceDetailsId(sessionId);
+        deviceDetails.setSessionId(sessionId);
+        deviceDetails.setDeviceDetailsId(idGenerator());
         deviceDetails.setEngine(details.getEngine());
         deviceDetails.setIpAddress(details.getIpAddress());
         deviceDetails.setLanguage(details.getLanguage());
@@ -296,17 +295,7 @@ public class AuthProcessor {
     /*
      * To generate Unique IDs
      */
-    private Map<String, String> idGenerator() {
-        String userId = UUID.randomUUID().toString().replace("-", "");
-        String sessionId = UUID.randomUUID().toString().replace("-", "");
-        String secret = UUID.randomUUID().toString().replace("-", "");
-
-        return new HashMap<>() {
-            {
-                put("userId", userId);
-                put("sessionId", sessionId);
-                put("secret", secret);
-            }
-        };
+    private String idGenerator() {
+        return UUID.randomUUID().toString().replace("-", "");
     }
 }

@@ -27,6 +27,10 @@ public class UserProfile {
     @Column(name = "ID")
     private Long id;
 
+    @Column(name = "USER_ID")
+    @NotBlank
+    private String userId;
+
     @Column(name = "USER_PROFILE_ID")
     @NotBlank
     private String userProfileId;

@@ -70,7 +70,7 @@ public class User {
     private LocalDateTime nextAttempt;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @PrimaryKeyJoinColumn(name = "PROFILE_ID")
+    @PrimaryKeyJoinColumn(name = "USER_PROFILE_ID")
     private UserProfile profile;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")

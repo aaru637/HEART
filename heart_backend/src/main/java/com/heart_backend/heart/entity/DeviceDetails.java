@@ -26,6 +26,10 @@ public class DeviceDetails {
     @Column(name = "ID")
     private Long id;
 
+    @Column(name = "SESSION_ID")
+    @NotBlank
+    private String sessionId;
+
     @Column(name = "DEVICE_DETAILS_ID")
     @NotBlank
     private String deviceDetailsId;
